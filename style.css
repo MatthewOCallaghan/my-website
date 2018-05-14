@@ -41,7 +41,8 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	font-size: 2.5rem;
+	/*font-size: 2.5rem;*/
+	font-size: 3rem;
 }
 
 #navbar nav a {
@@ -60,7 +61,7 @@ header {
 }
 
 .logo {
-	font-size: 5rem;
+	font-size: 7rem;
 }
 
 .logo-font {
