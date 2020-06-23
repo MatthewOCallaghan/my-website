@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			padding: 50vh 0;
+			margin: 0;
+			border: none;
+			overflow-x: hidden;
+			height: 150vh;
+		}
+		body div div {
+			width: 50vw;
+			height: 50vw;
+			background-image: url(./images/themes/malta.png);
+			margin: 0 auto;
+			transform: rotate(-90deg);
+		}
+
+		body:not(.scroll) div div:last-child {
+			display: none;
+		}
+
+		body.scroll div div:first-child {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div style="display: flex">
+		<div style="background-attachment: fixed; background-position: center; background-size: cover;">
+		</div>
+		<div style="background-attachment: scroll; background-position: center top; background-size: auto 100vh">
+		</div>
+	</div>
+	<button type="button" onclick="document.getElementsByTagName('body')[0].classList.toggle('scroll')">Switch</button>
+</body>
+</html>
