@@ -1,0 +1,563 @@
+@import 'normalize.css/normalize';
+
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	color: black;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+h1, h2, h3 {
+	font-family: "Permanent marker", cursive;
+}
+
+h1 {
+	font-size: 3.5rem;
+}
+
+h2 {
+	font-size: 2.5rem;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	text-align: justify;
+	color: black;
+}
+
+p, li, a, figcaption {
+	font-size: 1.6rem;
+}
+
+main {
+	background-color: white;
+}
+
+main section:first-child {
+	box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
+}
+
+main section:last-child {
+	box-shadow: inset 0 -7px 9px -7px rgba(0,0,0,0.4);
+}
+
+.button {
+	margin: 1rem;
+	border-radius: 1rem;
+	font-size: 2rem;
+	padding: 1rem 1.5rem;
+	font-family: "Permanent marker", cursive;
+	transition: all 0.4s;
+	border-style: solid;
+	border-width: 0.3rem;
+}
+
+.button-black {
+	border-color: black;
+}
+
+.button-filled.button-black {
+	background-color: black;
+}
+.button-ghost.button-black {
+	color: black;
+}
+
+.button-text-white {
+	color: white;
+}
+
+.button:hover {
+	text-decoration: none;
+}
+
+@media (hover:hover) {
+	.button.button-filled:hover {
+		background-color: transparent;
+	}
+
+	.button-ghost:hover {
+		color: white;
+	}
+
+	.button.button-filled.button-black:hover {
+		color: black;
+	}
+
+	.button.button-ghost.button-black:hover {
+		background-color: black;
+	}
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.logo-font {
+	font-family: 'Yellowtail', cursive;
+}
+
+.vertically-centre {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.vertically-space-evenly {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-evenly;
+}
+
+.vertically-space-between {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+
+.icons-div {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+	justify-content: center;
+	font-size: 4rem;
+}
+
+/* Float Shadow from Hover.css */
+.icons-div span {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.icons-div span:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.icons-div span:hover, section#about .icons-div span:focus, section#about .icons-div span:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.icons-div span:hover:before, section#about .icons-div span:focus:before, section#about .icons-div span:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+/* End of Float Shadow from Hover.css */
+
+.icons-div span {
+	margin: 2rem 2rem 0 2rem;
+	opacity: 0;
+}
+
+.icons-div.in-view span {
+	animation-name: fade-in;
+	animation-duration: 0.5s;
+    animation-fill-mode: both;
+    
+    @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+            animation-delay: 0.2s * $i;
+        }
+    }
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+header #header-background-image {
+	background-image: url("../images/themes/london.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+    position: fixed;
+    transition: background-image 2s;
+}
+
+header #navbar {
+	text-shadow: black 1px 1px 1px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 5%;
+	padding-top: 20px;
+	box-sizing: border-box;
+	min-height: 0;
+	transition: min-height 0s;
+	position: relative;
+}
+
+header .logo, header #navbar a.logo {
+	font-size: 5rem;
+	transition: color 0.5s;
+	text-decoration: none;
+}
+
+header #navbar nav {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+header #navbar nav a {
+	margin: 0 2vw;
+	font-family: "Permanent marker", cursive;
+	position: relative;
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+#navbar nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 0.3rem solid;
+  transition: width 0.3s;
+  border-radius: 10px;
+  box-shadow: black 1px 1px 1px;
+}
+
+header #navbar nav a:hover::after {
+  width: 100%;
+}
+
+footer {
+	background-color: rgb(37, 37, 37);
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-size: 1.6rem;
+	padding: 1rem 0;
+}
+
+footer div {
+	width: calc(33% - 2rem);
+	min-width: 250px;
+	max-width: 350px;
+	text-align: center;
+	margin: 1rem;
+}
+
+footer ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+footer span {
+	font-size: 5rem;
+}
+
+footer a {
+	color: white;
+}
+
+footer h3 {
+	margin-top: 0;
+}
+
+@media only screen and (max-width: 700px) {
+	footer h3 {
+		margin-bottom: 0;
+	}
+
+	footer ul {
+		margin: 0;
+	}
+}
+
+/* Bigger font on larger screens */
+@media only screen and (min-width: 700px) {
+	h1 {
+		font-size: 6rem;
+		font-weight: normal;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	.icons-div {
+		font-size: 6rem;
+	}
+
+	.icons-div span {
+		margin: 2rem 3rem 0 3rem;
+	}
+
+	header #navbar {
+		text-shadow: black 2px 2px 2px;
+	}
+
+	header #navbar nav a {
+		margin: 0 2rem;
+		font-size: 3rem;
+	}
+
+	#navbar nav a::after {
+		border-bottom: 0.5rem solid;
+	}
+
+	header #navbar a.logo, header .logo {
+		font-size: 7rem;
+	}
+}
+
+/* Nav menu */
+#nav-toggle {
+	display: none;
+	cursor: pointer;
+}
+
+// Nav toggle
+@media only screen and (max-width: 550px) {
+
+	header #navbar nav {
+		width: 100%;
+		height: 100%;
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		grid-column: 1 / span 3;
+		grid-row: 2 / span 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+
+		a {
+			&::after {
+				border-bottom: 0.7rem solid;
+				box-shadow: black 2px 2px 2px;
+			}
+
+			&:nth-child(1) {
+				animation-delay: 0.5s;
+			}
+		
+			&:nth-child(2) {
+				animation-delay: 0.8s;
+			}
+		
+			&:nth-child(3) {
+				animation-delay: 1.2s;
+			}
+		}
+
+		
+	}
+
+	#nav-toggle {
+		display: block;
+		width: 45px;
+		height: 45px;
+		position: relative;
+		background-color: transparent;
+		border: none;
+		padding: 0;
+		margin: 0;
+		grid-column: 3 / span 1;
+		margin: auto 0;
+
+		div {
+			top: 0;
+			left: 0;
+		}
+	
+		span {
+			display: block;
+			border-radius: 10px;
+			transition-property: background-color, width;
+			transition-duration: 0.5s, 0.25s;
+			transition-timing-function: linear, ease-in-out;
+			box-shadow: black 1px 1px 1px;
+		}
+	
+		#hamburger, #cross {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+	
+		#hamburger span {
+			width: 100%;
+			height: 3px;
+			position: relative;
+			margin: 10px 0;
+
+			&:nth-child(1) {
+				transition-delay: 0s, 0.5s;
+				margin-top: 8px;
+			}
+		
+			&:nth-child(2) {
+				transition-delay: 0s, 0.625s;
+			}
+		
+			&:nth-child(3) {
+				transition-delay: 0s, 0.75s;
+			}
+		}
+	
+		#cross {
+			transform: rotate(45deg);
+
+			span {
+				&:nth-child(1) {
+					height: 0;
+					width: 3px;
+					position: absolute;
+					left: calc((100% - 3px) / 2);
+					transition-property: background-color, height;
+					transition-duration: 0.5s, 0.25s;
+					transition-timing-function: linear, ease-in-out;
+				}
+			
+				&:nth-child(2) {
+					width: 0;
+					height: 3px;
+					position: absolute;
+					top: calc((100% - 3px) / 2);
+					transition-delay: 0s, 0.25s;
+					box-shadow: none;
+				}
+			
+				&:nth-child(2)::after {
+					content: "";
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					z-index: -1;
+					top: 0;
+					left: 0;
+					box-shadow: black 1px 0px 1px;
+					border-radius: 10px;
+				}
+			}
+		}
+	}
+
+	body.nav-open {
+		overflow: hidden;
+		height: 100vh;
+
+		#navbar {
+			display: grid;
+			min-height: 100vh;
+			width: 100%;
+			grid-template-columns: min-content 1fr min-content;
+			grid-template-rows: min-content 1fr;
+			transition: min-height 0.5s;
+		}
+
+		#nav-toggle {
+
+			#hamburger span {
+				width: 0;
+
+				&:nth-child(1) {
+					transition-delay: 0s;
+				}
+			
+				&:nth-child(2) {
+					transition-delay: 0s, 0.125s;
+				}
+			
+				&:nth-child(3) {
+					transition-delay: 0s, 0.25s;
+				}
+			}
+
+			#cross span {
+				
+				&:nth-child(1) {
+					height: 100%;
+					transition-delay: 0s, 0.625s;
+				}
+			
+				&:nth-child(2) {
+					width: 100%;
+					transition-delay: 0s, 0.375s;
+					box-shadow: none;
+				}
+			}
+		}
+
+		header #navbar nav {
+
+			display: flex;
+		
+			a {
+				font-size: 4rem;
+				color: white;
+				text-shadow: black 3px 3px 3px;
+				margin: 1rem 0;
+				animation-name: nav-appear;
+				animation-duration: 0.4s;
+				animation-fill-mode: both;
+			}
+		}
+		
+	}
+
+	@keyframes nav-appear {
+		from {
+			opacity: 0;
+			transform: translateY(15px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+	
+}

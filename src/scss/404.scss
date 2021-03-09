@@ -1,0 +1,51 @@
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.bg-pc {
+	background-color: black;
+}
+
+h1 {
+	font-family: 'Yellowtail', cursive;
+	font-size: 15vw;
+	font-weight: normal;
+}
+
+header #navbar, body.nav-open header #navbar nav a {
+	color: black;
+	text-shadow: none;
+}
+
+/* Remove navbar shadows */
+#nav-toggle span {
+	box-shadow: none;
+}
+
+#nav-toggle #cross span:nth-child(2)::after {
+	content: none;
+}
+
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	align-content: center;  
+}
+
+main * {
+	margin: 20px;
+}
+
+main div {
+	text-align: center;
+}
+
+main p {
+	margin-bottom: 30px;
+	text-align: center;
+}

@@ -1,0 +1,439 @@
+header {
+	min-height: 100vh;
+	text-align: right;
+
+	display: flex;
+	flex-direction: column;
+}
+
+section {
+	min-height: 100vh;
+	padding: 0 5%;
+	position: relative;
+	max-width: 100%;
+	outline: none;
+}
+
+.section-title {
+	background-image: url("../images/themes/london.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    -ms-transform: rotate(-90deg) translateX(-100%); /* IE 9 */
+    -webkit-transform: rotate(-90deg) translateX(-100%); /* Safari 3-8 */
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: 0% 0%;
+    width: 85vh;
+    padding: 1rem;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    transition: background-image 2s;
+    top: calc(7.5vh - 1rem);
+}
+
+.section-title.bg-scroll {
+	background-attachment: scroll;
+	background-position: center top;
+	background-size: auto 100vh;
+
+}
+
+.section-title .title {
+	font-size: 20vh;
+	color: white;
+	mix-blend-mode: multiply;
+	font-family: "Permanent marker", cursive;
+	line-height: 1;
+}
+
+@supports not (mix-blend-mode: multiply) {
+
+	.section-title .title {
+		opacity: 0.5;
+	}
+}
+
+section .container {
+	padding: 7.5vh 5% 7.5vh calc(20vh + 5vw + 2rem); /*20vh for section title text, 2rem for section title padding, and 5vw for section padding*/
+
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+header #header-background {
+	text-align: center;
+	position: relative;
+	transition: background-image 1s;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(255, 0, 0, 0.1);
+	transition: background-color 2s;
+	animation-name: shrink-header;
+	animation-duration: 0.5s;
+	animation-delay: 1s;
+	animation-fill-mode: both;
+}
+
+@keyframes shrink-header {
+	from {
+		min-height: 100vh;
+	}
+
+	to {
+		min-height: 94vh;
+	}
+}
+
+header #header-background-image {
+	background-image: url("../images/themes/london.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+    position: fixed;
+    transition: background-image 2s;
+}
+
+header .theme-duration-bar::after {
+	animation-name: stretchRight;
+	animation-duration: 30s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-bottom: red 0.5rem solid;
+}
+
+@keyframes stretchRight {
+
+	from {
+		width: 0%;
+	}
+
+	to {
+		width: 100%;
+	}
+
+}
+
+header #navbar {
+	animation-name: navbar-appear;
+	animation-duration: 1s;
+	animation-delay: 0.5s;
+	animation-fill-mode: both;
+}
+
+@keyframes navbar-appear {
+	from {
+		transform: translateY(-15px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+header #header-content {
+	width: 100%;
+	flex-grow: 1;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+header .header-greeting {
+	font-family: 'Permanent Marker', cursive;
+	color: white;
+	font-size: 10vw;
+	padding: 0 1rem;
+	text-shadow: black 2px 2px 2px;
+	animation-name: fade-in;
+	animation-duration: 1s;
+	animation-delay: 1.5s;
+	animation-fill-mode: both;
+}
+
+header #image-location {
+	font-family: 'Mr Dafoe', cursive;
+	font-size: 3vh;
+	padding-right: 2rem;
+	background-color: white;
+	flex-grow: 1;
+	height: 0;
+	overflow: hidden;
+}
+
+section#about {
+	background-color: #FAFAFA;
+	background-image: url("../images/backgrounds/brick-wall.png");
+}
+
+section#work {
+	background-color: white;
+
+	// Reorders work-item layout when screen is wide enough that it is laid out horizontally
+	// When screen is wide enough, work-item-order.js adds row-layout class to #work-list
+	#work-list.row-layout .work-item:nth-child(even) .work-item-details {
+		order: 1;
+	}
+
+
+	.work-item {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		position: relative;
+		margin: 30px 0;
+		padding: 30px 0;
+
+		@media only screen and (min-width: 700px) {
+	
+			& {
+				margin-top: 60px;
+				margin-bottom: 60px;
+			}
+		
+		}
+		
+		& > * {
+			z-index: 2;
+		}
+		
+		&:nth-child(1) {
+			margin-top: 0;
+		}
+		
+		@media only screen and (max-width: 699px) {
+		
+			&:nth-child(1) {
+				padding-top: 0;
+			}
+		
+		}
+		
+		&:nth-child(even) {
+			margin-right: -9.5vw;
+			padding-right: 9.5vw;
+		}
+		
+		&:nth-child(even)::before, &:nth-child(even)::after {
+			background: inherit;
+			content: '';
+			display: block;
+			height: 50%;
+			left: 0;
+			position: absolute;
+			right: 0;
+			z-index: 1;
+		}
+		
+		&:nth-child(4n-2)::before { // 2nd item, 6th item, ...
+			transform: skewY(-2deg);
+			transform-origin: 0;
+			top: 0;
+		}
+		
+		&:nth-child(4n-2)::after {
+			transform: skewY(2deg);
+			transform-origin: 0 100%;
+			bottom: 0;
+		}
+		
+		&:nth-child(4n)::before { // 4th item, 8th item, ...
+			transform: skewY(2deg);
+			transform-origin: 100% 0;
+			top: 0;
+		}
+		
+		&:nth-child(4n)::after {
+			transform: skewY(-2deg);
+			transform-origin: 100%;
+			bottom: 0;
+		}
+		
+		& > div {
+			width: 40%;
+			padding: 0 5%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			min-width: 240px;
+			flex-grow: 1;
+		}
+		
+		.work-item-details p {
+			text-align: center;
+			margin-top: 0;
+		}
+		
+		.work-item-extra .link-list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			a {
+				display: block;
+				width: min-content;
+			}
+		}
+		
+		figure {
+			max-width: 400px;
+			max-height: 200px;
+			width: 100%;
+		
+			img {
+				max-height: 200px;
+				max-width: 100%;
+				width: auto;
+				height: auto;
+			}
+		}
+	}
+	
+	
+}
+
+section#contact {
+	background-color: #252525;
+	background-image: url("../images/backgrounds/notebook.png");
+}
+
+section#contact p {
+	color: white;
+	text-align: left;
+	font-family: "Yellowtail", cursive;
+}
+
+section#contact p, section#contact a {
+	font-size: 2rem;
+}
+
+section#contact .logo-font {
+	font-size: 3.5rem;
+}
+
+@media (hover: none) {  
+	.section-title {
+		background-attachment: scroll;
+	}
+
+}
+
+/* Colour changes according to theme */
+.pc, a, .pc-hover:hover {
+	color: #FF0000;
+	transition: all 0.4s;
+}
+
+.bg-pc, .bg-pc-hover:hover {
+	background-color: #FF0000;
+	transition: all 0.4s;
+}
+
+.bc-pc, .bc-pc-hover:hover, .theme-duration-bar::after {
+	border-color: #FF0000;
+	transition: all 0.4s;
+}
+
+.outline-pc:focus {
+	outline: auto #FF0000;
+}
+/* End of colour changes */
+
+/* Text size adjustments for bigger screens */
+@media only screen and (min-width: 700px) {
+
+	header .header-greeting {
+		text-shadow: black 4px 4px 4px;
+	}
+
+	section#contact p, section#contact a {
+		font-size: 4rem;
+	}
+
+	section#contact .logo-font {
+		font-size: 6rem;
+	}
+
+	/*footer {
+		font-size: 1.5rem;
+	}*/
+}
+
+/* Larger font for big screens */
+@media only screen and (min-width: 1700px) {
+
+	p, li, a {
+		font-size: 2rem;
+	}
+
+	footer h3 {
+		font-size: 2.5rem;
+	}
+
+}
+
+
+/* Section titles horizontal at start of section */
+@media only screen and (max-width: 800px), only screen and (orientation: portrait) {
+
+	.section-title {
+		transform: none;
+		width: calc(100% - 2rem);
+		position: relative;
+		top: 0;
+		background-position: center;
+	}
+
+	.section-title .title {
+		font-size: 20vw;
+	}
+
+	section {
+		padding: 3rem 5%;
+		overflow: hidden;
+		min-height: unset;
+	}
+
+	section .container {
+		padding: 0;
+
+		min-height: 0;
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	section#work .work-item:nth-child(even) {
+		margin-left: -9.5vw;
+		padding-left: 9.5vw;
+	} 
+}
+
+/* Portrait landing page */
+@media only screen and (orientation: portrait) {
+
+	header .header-greeting {
+		font-size: 13vw;
+	}
+
+	header .buttons-list {
+		flex-direction: column;
+	}
+
+	header .buttons-list a {
+		margin: 2rem 0;
+		font-size: 6vw;
+	}
+}
