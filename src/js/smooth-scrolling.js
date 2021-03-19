@@ -22,6 +22,8 @@ $(document).ready(function() {
 			    
 			    if (target.length) {
 
+					console.log(target.offset().top);
+
 			    	// Only prevent default if animation is actually going to happen
 			    	event.preventDefault();
 			    	$('html, body').animate({

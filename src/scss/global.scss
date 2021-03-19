@@ -57,11 +57,11 @@ main section:last-child {
 
 .button {
 	margin: 1rem;
-	border-radius: 1rem;
 	font-size: 2rem;
-	padding: 1rem 1.5rem;
 	font-family: "Permanent marker", cursive;
+	padding: 1rem 1.5rem;
 	transition: all 0.4s;
+	border-radius: 1rem;
 	border-style: solid;
 	border-width: 0.3rem;
 }
@@ -229,8 +229,15 @@ header #navbar {
 	padding-top: 20px;
 	box-sizing: border-box;
 	min-height: 0;
-	transition: min-height 0s;
+	transition: min-height 0.5s;
 	position: relative;
+}
+
+body.nav-no-close-transition {
+
+	header #navbar {
+		transition: min-height 0s;
+	}
 }
 
 header .logo, header #navbar a.logo {
@@ -403,9 +410,11 @@ footer h3 {
 		background-color: transparent;
 		border: none;
 		padding: 0;
-		margin: 0;
 		grid-column: 3 / span 1;
-		margin: auto 0;
+
+		// At this screen width, logo is always 57px so top margin of 6px required for a hamburger height of 45px
+		// Cannot use auto margin for top and bottom as container height changes during closing transition so hamburger would move to always stay at vertical centre
+		margin-top: 6px;
 
 		div {
 			top: 0;
@@ -495,7 +504,6 @@ footer h3 {
 			width: 100%;
 			grid-template-columns: min-content 1fr min-content;
 			grid-template-rows: min-content 1fr;
-			transition: min-height 0.5s;
 		}
 
 		#nav-toggle {
@@ -545,7 +553,6 @@ footer h3 {
 				animation-fill-mode: both;
 			}
 		}
-		
 	}
 
 	@keyframes nav-appear {

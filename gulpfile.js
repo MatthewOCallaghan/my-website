@@ -11,9 +11,11 @@ const purgecss = require('gulp-purgecss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const revAll = require('gulp-rev-all'); // Puts hashes in filenames so browser's cache can hold assets for a long time but will fetch new assets if they have been updated (because file names will be different)
-const imagemin= require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const del = require('del');
+const ftp = require('vinyl-ftp');
+const logger = require('fancy-log');
 
 function setupBrowserSync(cb) {
     browserSync.init({
@@ -54,7 +56,7 @@ function buildFiles() {
             .pipe(gulpIf('*.css', purgecss({ content: ['src/**/*.html', 'src/**/*.js'] }))) // This should go in postcssPlugins but having tried briefly I couldn't get it to work
             .pipe(gulpIf('*.css', postcss(postcssPlugins)))
             .pipe(gulpIf('*.+(png|jpg|gif|svg)', cache(imagemin({ interlaced: true }))))
-            .pipe(revAll.revision({ dontRenameFile: [".html"], dontUpdateReference: [".html"]}))
+            .pipe(revAll.revision({ dontRenameFile: [".html"], dontUpdateReference: [".html"]})) // Cache busting
             .pipe(dest('dist'));
 }
 
@@ -65,6 +67,34 @@ function buildFiles() {
 //             .pipe(cache(imagemin({ interlaced: true })))
 //             .pipe(dest('dist/images'));
 // }
+
+function deploy() {
+
+    var connection = ftp.create( {
+        host: 'yali.mythic-beasts.com',
+        user: process.env.FTP_USERNAME,
+        password: process.env.FTP_PASSWORD,
+        log: logger.log
+    });
+
+    var remoteFolder = '/www/www.matthewocallaghan.uk';
+
+    return src('dist/**/*', { base: 'dist', buffer: false })
+        .pipe(connection.filter(remoteFolder, function(localFile, remoteFile, callback) {
+            // console.log(localFile.stat.mtime);
+            // console.log(localFile.extname);
+            // console.log(remoteFile ? remoteFile.ftp.date : "No remote file");
+            callback(null, !remoteFile || localFile.extname === '.html' || localFile.stat.mtime > remoteFile.ftp.date);
+        }))
+        .pipe(connection.filter(remoteFolder, function(localFile, remoteFile, callback) {
+            console.log(localFile.path);
+            callback(null, true);
+        }));
+        // .pipe(connection.newer(remoteFolder))
+        // .pipe(connection.dest(remoteFolder))
+        // .pipe(connection.clean(['/**/*.js', '/**/*.css', '/images/**/*', '/videos/**/*'].map(p => remoteFolder + p), './dist', { base: remoteFolder }));
+
+}
 
 function cleanDist() {
     return del('dist');
@@ -87,3 +117,5 @@ exports.clearCache = clearCache;
 exports.default = series(setupBrowserSync, processSass, watchFiles);
 
 exports.build = series(cleanDist, processSass, buildFiles);
+
+exports.deploy = deploy;

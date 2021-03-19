@@ -1,14 +1,18 @@
 // Function to remove nav-open class from body
 function removeNavOpenFromBody() {
-	document.getElementsByTagName('body')[0].classList.remove('nav-open');
+	var body = document.getElementsByTagName('body')[0];
+	// body.classList.remove('nav-open');
+	body.classList.replace('nav-open', 'nav-no-close-transition');
 }
 
 // Add onclick to nav toggler
 document.getElementById('nav-toggle').onclick = function() {
-	document.getElementsByTagName('body')[0].classList.toggle('nav-open');
+	var classes = document.getElementsByTagName('body')[0].classList;
+	classes.toggle('nav-open');
+	classes.remove('nav-no-close-transition');
 };
 
-// Close nav menu when link clicked
+// Only need to close nav menu when link clicked if this is landing page (due to links being on same page)
 var nav = document.getElementsByTagName('nav')[0];
 var landing = nav.classList.contains('landing');
 if (landing) {
