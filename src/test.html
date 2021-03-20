@@ -1,60 +1,249 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Matthew O&#39;Callaghan</title>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
-        
-        <!-- build:css css/index.min.css -->
-        <link rel="stylesheet" type="text/css" href="css/global.css">
-        <link rel="stylesheet" type="text/css" href=css/index.css>
-        <!-- endbuild -->
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content=test>
+<head>
+    <title>Rocket League Analytics | Matthew O&#39;Callaghan</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-    </head>
-    <body>
-        <header>
-            
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Permanent+Marker&family=Yellowtail&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
+
+    <!-- build:css css/work.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href=css/work.css>
+    <!-- endbuild -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rocket League Analytics was my third year university project and provides in-game analytics, match history, and statistics tracking for Rocket League players.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <style>
+        :root {
+            --colour: orange;
+        }
     
-    <div id="header-background">
-        <div id="header-background-image" class="bg-ti"></div>
-        
-    <div id="navbar">
-        <span class="logo logo-font pc">MO'C</span>
-        <button id="nav-toggle" class="outline-pc" type="button" aria-label="Toggle menu">
-            <div id="hamburger">
-                <span class="bg-pc"></span>
-                <span class="bg-pc"></span>
-                <span class="bg-pc"></span>
-            </div>
-            <div id="cross">
-                <span class="bg-pc"></span>
-                <span class="bg-pc"></span>
-            </div>
-        </button>
-        <nav class="landing">
-            <a href="#about" class="pc smooth-scroll">About</a>
-            <a href="#work" class="pc smooth-scroll">Work</a>
-            <a href="#contact" class="pc smooth-scroll">Contact</a>
-        </nav>
-    </div>
+        h1, h2, a, header, footer h3, .pc {
+            color: var(--colour);
+            border-color: var(--colour);
+        }
+        .bg-pc {
+            background-color: var(--colour);
+        }
+        .outline-pc:focus {
+            outline: auto var(--colour);
+        }
+        @media (hover: hover) {
+            .bg-pc-hover:hover {
+                background-color: var(--colour);
+            }
+        }
+    </style>
+</head>
 
-        <div id="header-content">
-            <div>
-                <span class="header-greeting">Hi,</span><br>
-                <span class="header-greeting">I'm Matthew!</span>
-            </div>
+<body>
+    <header>
+
+
+
+
+
+        <div id="particles-js"></div>
+
+
+
+        <div id="navbar">
+
+            <a href="index.html" class="logo logo-font pc">MO'C</a>
+
+            <button id="nav-toggle" class="outline-pc" type="button" aria-label="Toggle menu">
+                <div id="hamburger">
+                    <span class="bg-pc"></span>
+                    <span class="bg-pc"></span>
+                    <span class="bg-pc"></span>
+                </div>
+                <div id="cross">
+                    <span class="bg-pc"></span>
+                    <span class="bg-pc"></span>
+                </div>
+            </button>
+            <nav>
+                <a href="index.html#about">About</a>
+                <a href="index.html#work">Work</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
         </div>
-    </div>
-    <div id="image-location" class="vertically-centre">London, United Kingdom</div>
+        <h1>Rocket League Analytics</h1>
 
-        </header>
-        
-    </body>
+    </header>
+    <main>
+
+        <section id="intro">
+            <div>
+                <p>
+                    Comprised of a frontend React app and backend node server, Rocket League Analytics provides in-game analytics, match history, and statistics tracking for Rocket League players. All the player has to do is submit an image of the in-game scoreboard...
+                </p>
+            </div>
+            <div>
+                <figure>
+                    <img src="images/work/rl-analytics/rl-analytics.png" width="auto" height="auto" alt="Rocket League Analytics on various devices">
+                </figure>
+            </div>
+            <div class="w-100"><a class="button button-ghost bg-pc-hover" href="http://rocketleagueanalytics.herokuapp.com" target="_blank">View website</a>
+            </div>
+        </section>
+        <section id="details">
+            <h2>Tell me more&nbsp;...</h2>
+
+            <p>When players of the video game Rocket League join a match, they do not know the abilities of their random opponents or teammates. Furthermore, the game does not record match history or provide statistics tracking. I decided to address these
+                issues for my final year university project. Some limited solutions already existed, though these were just for PC players, so I was determined to achieve a solution that console players could use.</p>
+
+            <p>At the start of each Rocket League match they play, users of my app will submit a screenshot of the in-game scoreboard, from which the app will extract player usernames. This unique feature ensures my app remains platform independent and so
+                available to console players. For the ~15% of names which my app misreads, users can manually edit them. Data on those players is scraped from Rocket League statistics website Tracker Network and presented to the user in an easily-consumable
+                fashion to be absorbed whilst playing. Once the match has concluded, the same data is scraped again and the result can be calculated by identifying the differences in each player&#39;s MVPs, goals, wins, assists, saves, and shots. This
+                match data is stored in a PostgreSQL database, enabling the app to also provide users with match history and statistics tracking over time.</p>
+
+            <p>The concept of &#39;sessions&#39; are used within the app such that users can create and view sessions, and new matches are added to a session. Logged in users can control a session from multiple devices, allowing them to take the screenshots
+                on their phone but view the analytics on a larger screen. Users can also co-host sessions, where any host of a session can edit names and add new matches, which is useful for when playing with friends. All hosts and viewers of a session
+                see the same analytics which update in real-time.</p>
+
+            <p>The React app utilised Redux and React Router, and I opted to include React Bootstrap due to the time contraints of the project. The backend Node.js server used Google Cloud Vision API to identify text from screenshots, JSON Web Tokens for
+                managing sessions, Firebase authentication for user logins, and Knex.js to build database queries. Testing was conducted using Jest.</p>
+
+
+
+            <div class="icons-div">
+
+                <span><i class="devicon-html5-plain colored"></i></span>
+
+                <span><i class="devicon-css3-plain colored"></i></span>
+
+                <span><i class="devicon-javascript-plain colored"></i></span>
+
+                <span><i class="devicon-react-original colored"></i></span>
+
+                <span><i class="devicon-redux-original colored"></i></span>
+
+                <span><i class="devicon-nodejs-plain colored"></i></span>
+
+                <span><i class="devicon-express-original colored"></i></span>
+
+                <span><i class="devicon-bootstrap-plain colored"></i></span>
+
+                <span><i class="devicon-postgresql-plain colored"></i></span>
+
+                <span><i class="devicon-heroku-original colored"></i></span>
+
+                <span><i class="devicon-googlecloud-plain colored"></i></span>
+
+                <span><i class="devicon-firebase-plain colored"></i></span>
+
+            </div>
+
+        </section>
+        <section id="screenshots">
+
+
+
+
+
+            <h2>Screenshots</h2>
+
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot1.png" width="100%" height="auto" alt="Landing page">
+                <figcaption>Landing page</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot2.png" width="100%" height="auto" alt="Login page">
+                <figcaption>Login page</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot3.png" width="100%" height="auto" alt="Adding a new match to a session">
+                <figcaption>Adding a new match to a session</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot4.png" width="100%" height="auto" alt="In-game analytics">
+                <figcaption>In-game analytics</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot5.png" width="100%" height="auto" alt="Editing a username">
+                <figcaption>Editing a username</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot6.png" width="100%" height="auto" alt="Teammates can be invited to co-host a session">
+                <figcaption>Teammates can be invited to co-host a session</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot7.png" width="100%" height="auto" alt="Match results are calculated once the game has finished">
+                <figcaption>Match results are calculated once the game has finished</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot8.png" width="100%" height="auto" alt="Match history">
+                <figcaption>Match history</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot9.png" width="100%" height="auto" alt="Viewing details of a match in match history">
+                <figcaption>Viewing details of a match in match history</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/rl-analytics/screenshot10.png" width="100%" height="auto" alt="Statistics tracking">
+                <figcaption>Statistics tracking</figcaption>
+            </figure>
+
+
+
+        </section>
+
+    </main>
+    <footer>
+        <div>
+            <h3 class="pc">Navigation</h3>
+            <ul>
+                <li>
+                    <a href="index.html#about">About</a>
+                </li>
+                <li>
+                    <a href="index.html#work">Work</a>
+                </li>
+                <li>
+                    <a href="index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="pc">Get in touch</h3>
+            <a href="mailto:hello@matthewocallaghan.uk">hello@matthewocallaghan.uk</a>
+        </div>
+        <div class="vertically-centre">
+            <span class="logo-font pc">MO'C</span>
+            <small>&copy; 2021 Matthew O'Callaghan</small>
+        </div>
+    </footer>
+
+
+    <!-- build:js js/rl-analytics.min.js -->
+    <script type="text/javascript" src="js/nav-menu.js" defer></script>
+
+
+    <script type="text/javascript" src="js/in-view.js" defer></script>
+
+    <script type="text/javascript" src="js/particles.js" defer></script>
+
+    <!-- endbuild -->
+</body>
+
 </html>

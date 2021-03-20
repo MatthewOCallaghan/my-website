@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{ page.title }}</title>
+        <title>{{ pages[page].title }}</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
         {% block fonts %}{% endblock %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
+        {% if page != "404" %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">{% endif %}
         
-        <!-- build:css css/{{ page.cssName }}.min.css -->
+        <!-- build:css css/{{ pages[page].cssFile }}.min.css -->
         <link rel="stylesheet" type="text/css" href="css/global.css">
-        <link rel="stylesheet" type="text/css" href={{ "css/" ~ page.cssName ~ ".css"}}>
+        <link rel="stylesheet" type="text/css" href={{ "css/" ~ pages[page].cssFile ~ ".css"}}>
         <!-- endbuild -->
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content={{ page.description | string }}>
+        {% if pages[page].description %}<meta name="description" content="{{ pages[page].description }}">{% endif %}
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
+
+        <style>
+            {% block style %}{% endblock %}
+        </style>
     </head>
     <body>
         <header>
             {% block header %}{% endblock %}
         </header>
-        {# <main>
+        <main>
             {% block main %}{% endblock %}
         </main>
         <footer>
@@ -49,6 +54,11 @@
                 <small>&copy; 2021 Matthew O'Callaghan</small>
             </div>
         </footer>
-        {% block scripts %}{% endblock %} #}
+        {% block remoteScripts %}{% endblock %}
+
+        <!-- build:js js/{{ pages[page].jsFilename }}.min.js -->
+        <script type="text/javascript" src="js/nav-menu.js" defer></script>
+        {% block scripts %}{% endblock %}
+        <!-- endbuild -->
     </body>
 </html>

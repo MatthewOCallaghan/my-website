@@ -15,6 +15,7 @@ const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const del = require('del');
 const nunjucksRender = require('gulp-nunjucks-render');
+const htmlPrettify = require('gulp-html-prettify');
 const data = require('gulp-data');
 const ftp = require('vinyl-ftp');
 const logger = require('fancy-log');
@@ -37,12 +38,28 @@ function processSass() {
             }));
 }
 
+
 function processNunjucks() {
+
+    const manageEnvironment = function(environment) {
+
+        environment.addFilter('getWorkInfo', function(work, page) {
+            return work.filter(workItem => workItem.page === page)[0];
+        });
+
+        environment.addFilter('countProperties', function(obj) {
+            return Object.keys(obj).length;
+        })
+
+    }
+
     return src('src/pages/**/*.njk')
         .pipe(data(() => require('./src/data.json')))
         .pipe(nunjucksRender({
-            path: ['src/templates/']
+            path: ['src/templates/'],
+            manageEnv: manageEnvironment
         }))
+        .pipe(htmlPrettify())
         .pipe(dest('src'));
 }
 

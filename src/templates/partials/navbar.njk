@@ -1,0 +1,23 @@
+<div id="navbar">
+    {% if page == "index" %}
+        <span class="logo logo-font pc">MO'C</span>
+    {% else %}
+        <a href="index.html" class="logo logo-font pc">MO'C</a>
+    {% endif %}
+    <button id="nav-toggle" class="outline-pc" type="button" aria-label="Toggle menu">
+        <div id="hamburger">
+            <span class="bg-pc"></span>
+            <span class="bg-pc"></span>
+            <span class="bg-pc"></span>
+        </div>
+        <div id="cross">
+            <span class="bg-pc"></span>
+            <span class="bg-pc"></span>
+        </div>
+    </button>
+    <nav {% if page == "index" %}class="landing"{% endif %}>
+        <a href="{{ "#about" if page == "index" else "index.html#about" }}" {% if page == "index" %}class="pc smooth-scroll"{% endif %}>About</a>
+        <a href="{{ "#work" if page == "index" else "index.html#work" }}" {% if page == "index" %}class="pc smooth-scroll"{% endif %}>Work</a>
+        <a href="{{ "#contact" if page == "index" else "index.html#contact" }}" {% if page == "index" %}class="pc smooth-scroll"{% endif %}>Contact</a>
+    </nav>
+</div>

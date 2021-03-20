@@ -1,0 +1,11 @@
+{% set page = "rl-analytics" %}
+{% extends "work-template.njk" %}
+
+{% block headerBackground %}
+    <div id="particles-js"></div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}{# Add to scripts in work-template #}
+    <script type="text/javascript" src="js/particles.js" defer></script>
+{% endblock %}
