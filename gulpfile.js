@@ -23,7 +23,10 @@ const logger = require('fancy-log');
 function setupBrowserSync(cb) {
     browserSync.init({
         server: {
-            baseDir: 'src'
+            baseDir: 'src',
+            serveStaticOptions: {
+                extensions: ['html']
+            }
         }
     });
     cb();
@@ -60,7 +63,10 @@ function processNunjucks() {
             manageEnv: manageEnvironment
         }))
         .pipe(htmlPrettify())
-        .pipe(dest('src'));
+        .pipe(dest('src'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
 }
 
 function reload(cb) {
@@ -70,7 +76,7 @@ function reload(cb) {
 
 function watchFiles() {
     watch('src/scss/**/*.scss', processSass);
-    watch('src/**/*.html', reload);
+    watch(['src/pages/**/*.njk', 'src/templates/**/*.njk'], processNunjucks);
     watch('src/js/**/*.js', reload);
 }
 
@@ -142,9 +148,9 @@ exports.cleanDist = cleanDist;
 
 exports.clearCache = clearCache;
 
-exports.default = series(setupBrowserSync, processSass, watchFiles);
+exports.default = series(parallel(processSass, processNunjucks), setupBrowserSync, watchFiles);
 
-exports.build = series(cleanDist, processSass, buildFiles);
+exports.build = series(cleanDist, parallel(processSass, processNunjucks), buildFiles);
 
 exports.deploy = deploy;
 
