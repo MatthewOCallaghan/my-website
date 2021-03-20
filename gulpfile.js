@@ -117,20 +117,16 @@ function deploy() {
 
     const remoteFolder = config.remoteFolder;
 
-    return src('dist/**/*', { base: 'dist', buffer: false })
+    return src('dist/**/*.*', { base: 'dist', buffer: false }) // dist/**/*.* matches all files but not folders
         .pipe(connection.filter(remoteFolder, function(localFile, remoteFile, callback) {
-            // console.log(localFile.stat.mtime);
-            // console.log(localFile.extname);
-            // console.log(remoteFile ? remoteFile.ftp.date : "No remote file");
+            // If css or js files have been changed, revAll will have given them a different hash
+            // References only get set (by revAll) in build function, so even if a reference to a css or js file has changed, an HTML file's modified date will be the last time I directly edited it
+            // Thus cannot use connection.newer() to filter new files as if an HTML file has not been edited but its CSS file has been, the HTML with the updated reference to the CSS file will not get deployed
+            // Thus I am using a custom filter function that keeps files that are new (no equivalent remote file), HTML (so all HTML files get pushed - which is only 6 - as trying to work out which files have updated references is complicated), or newer than their remote versions
             callback(null, !remoteFile || localFile.extname === '.html' || localFile.stat.mtime > remoteFile.ftp.date);
         }))
-        .pipe(connection.filter(remoteFolder, function(localFile, remoteFile, callback) {
-            console.log(localFile.path);
-            callback(null, true);
-        }));
-        // .pipe(connection.newer(remoteFolder))
-        // .pipe(connection.dest(remoteFolder))
-        // .pipe(connection.clean(['/**/*.js', '/**/*.css', '/images/**/*', '/videos/**/*'].map(p => remoteFolder + p), './dist', { base: remoteFolder }));
+        .pipe(connection.dest(remoteFolder)) // Deploy
+        .pipe(connection.clean(['/**/*.js', '/**/*.css', '/images/**/*', '/videos/**/*'].map(p => remoteFolder + p), './dist', { base: remoteFolder })); // Remove remote files with no local version
 
 }
 
@@ -142,14 +138,6 @@ function clearCache(cb) {
     return cache.clearAll(cb);
 }
 
-exports.watch = watchFiles;
-
-exports.buildFiles = buildFiles;
-
-// exports.minifyImages = minifyImages;
-
-exports.cleanDist = cleanDist;
-
 exports.clearCache = clearCache;
 
 exports.default = series(parallel(processSass, processNunjucks), setupBrowserSync, watchFiles);
@@ -157,5 +145,3 @@ exports.default = series(parallel(processSass, processNunjucks), setupBrowserSyn
 exports.build = series(cleanDist, parallel(processSass, processNunjucks), buildFiles);
 
 exports.deploy = deploy;
-
-exports.nunjucks = processNunjucks;
