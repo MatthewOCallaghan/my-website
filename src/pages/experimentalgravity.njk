@@ -1,0 +1,13 @@
+{% set page = "experimentalgravity" %}
+{% extends "work-template.njk" %}
+
+{% block screenshots %}
+    <h2>App preview</h2>
+    <video width="300" height="auto" controls>
+        <source src="{{ workInfo.evidence.appPreview }}" type="video/mp4">
+    </video>
+    {{ super() }} {# Website screenshot #}
+    <h2>App trailer</h2>
+    <!-- Max height is approx. #screenshots has left and right padding of 5%, so max width is (approx) 90vw, so max height = 90vw * 315/560 -->
+    <iframe width="560" height="315" style="max-height: 50.625vw;" src="{{ workInfo.evidence.trailer }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% endblock %}

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Rocket League Analytics | Matthew O&#39;Callaghan</title>
+    <title>Experimental Gravity | Matthew O&#39;Callaghan</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Permanent+Marker&family=Yellowtail&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <!-- endbuild -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rocket League Analytics was my third year university project and provides in-game analytics, match history, and statistics tracking for Rocket League players.">
+    <meta name="description" content="Experimental Gravity is the unique physics-based puzzle that puts you in control of gravity. Available now on iOS!">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,7 +24,7 @@
 
     <style>
         :root {
-            --colour: orange;
+            --colour: rgb(202,116,184);
         }
     
         h1, h2, a, header, footer h3, .pc {
@@ -51,9 +51,7 @@
 
 
 
-
-        <div id="particles-js"></div>
-
+        <div id="header-background-image" class="bg-ti" style="background-image: url(images/work/experimental-gravity/background.png);"></div>
 
 
         <div id="navbar">
@@ -77,7 +75,7 @@
                 <a href="index.html#contact">Contact</a>
             </nav>
         </div>
-        <h1>Rocket League Analytics</h1>
+        <h1>Experimental Gravity</h1>
 
     </header>
     <main>
@@ -85,38 +83,37 @@
         <section id="intro">
             <div>
                 <p>
-                    Comprised of a frontend React app and backend node server, Rocket League Analytics provides in-game analytics, match history, and statistics tracking for Rocket League players. All the player has to do is submit an image of the in-game scoreboard...
+                    Experimental Gravity is a physics-based puzzle game on iOS that puts the player in control of gravity. What goes up, doesn&#39;t have to come down...
                 </p>
             </div>
             <div>
                 <figure>
-                    <img src="images/work/rl-analytics/rl-analytics.png" width="auto" height="auto" alt="Rocket League Analytics on various devices">
+                    <img src="images/work/experimental-gravity/experimental-gravity.png" width="auto" height="auto" alt="Experimental Gravity on iPhone and iPad">
                 </figure>
             </div>
-            <div class="w-100"><a class="button button-ghost bg-pc-hover" href="http://rocketleagueanalytics.herokuapp.com" target="_blank">View website</a>
+            <div class="w-100"><a class="button button-ghost bg-pc-hover" href="https://www.experimentalgravity.com" target="_blank">View website</a>
             </div>
         </section>
         <section id="details">
             <h2>Tell me more&nbsp;...</h2>
 
-            <p>When players of the video game Rocket League join a match, they do not know the abilities of their random opponents or teammates. Furthermore, the game does not record match history or provide statistics tracking. I decided to address these
-                issues for my final year university project. Some limited solutions already existed, though these were just for PC players, so I was determined to achieve a solution that console players could use.</p>
+            <p>Gameplay opens with a tutorial explaining that technology has been developed which enables gravity to be controlled and it&#39;s the player&#39;s job to test it, before walking them through the simple touch/swipe controls. 140 levels follow,
+                each a colourful puzzle in which the player is tasked with hitting a number of targets with &#39;Orbs&#39; by manipulating gravity. Every level has its own objectives for achieving three stars. The game offers colour blind options and
+                both UK and US English.</p>
 
-            <p>At the start of each Rocket League match they play, users of my app will submit a screenshot of the in-game scoreboard, from which the app will extract player usernames. This unique feature ensures my app remains platform independent and so
-                available to console players. For the ~15% of names which my app misreads, users can manually edit them. Data on those players is scraped from Rocket League statistics website Tracker Network and presented to the user in an easily-consumable
-                fashion to be absorbed whilst playing. Once the match has concluded, the same data is scraped again and the result can be calculated by identifying the differences in each player&#39;s MVPs, goals, wins, assists, saves, and shots. This
-                match data is stored in a PostgreSQL database, enabling the app to also provide users with match history and statistics tracking over time.</p>
-
-            <p>The concept of &#39;sessions&#39; are used within the app such that users can create and view sessions, and new matches are added to a session. Logged in users can control a session from multiple devices, allowing them to take the screenshots
-                on their phone but view the analytics on a larger screen. Users can also co-host sessions, where any host of a session can edit names and add new matches, which is useful for when playing with friends. All hosts and viewers of a session
-                see the same analytics which update in real-time.</p>
-
-            <p>The React app utilised Redux and React Router, and I opted to include React Bootstrap due to the time contraints of the project. The backend Node.js server used Google Cloud Vision API to identify text from screenshots, JSON Web Tokens for
-                managing sessions, Firebase authentication for user logins, and Knex.js to build database queries. Testing was conducted using Jest.</p>
+            <p>I developed Experimental Gravity using Unity and C# and designed the vast majority of the game art myself with Inkscape. Being available on both tablet and mobile, the gameplay and UI can adapt to a range of screen sizes, including for devices
+                with a safe area smaller than their screen. Beta testing was conducted using Apple&#39;s TestFlight. On completion of the game, app previews and a trailer (available on its &lt;a href=&quot;https://www.youtube.com/channel/UCesx4XJR_iaRpPF36geNlRA&quot;
+                target=&quot;_blank&quot;&gt;YouTube channel&lt;/a&gt;) were created using iMovie, and I developed an accompanying website complete with privacy policy and press kit.</p>
 
 
 
             <div class="icons-div">
+
+                <span><i class="devicon-csharp-plain colored"></i></span>
+
+                <span><i class="devicon-inkscape-plain colored"></i></span>
+
+                <span><i class="devicon-apple-original colored"></i></span>
 
                 <span><i class="devicon-html5-plain colored"></i></span>
 
@@ -124,23 +121,9 @@
 
                 <span><i class="devicon-javascript-plain colored"></i></span>
 
-                <span><i class="devicon-react-original colored"></i></span>
+                <span><i class="devicon-gulp-plain colored"></i></span>
 
-                <span><i class="devicon-redux-original colored"></i></span>
-
-                <span><i class="devicon-nodejs-plain colored"></i></span>
-
-                <span><i class="devicon-express-original colored"></i></span>
-
-                <span><i class="devicon-bootstrap-plain colored"></i></span>
-
-                <span><i class="devicon-postgresql-plain colored"></i></span>
-
-                <span><i class="devicon-heroku-original colored"></i></span>
-
-                <span><i class="devicon-googlecloud-plain colored"></i></span>
-
-                <span><i class="devicon-firebase-plain colored"></i></span>
+                <span><i class="devicon-sass-original colored"></i></span>
 
             </div>
 
@@ -149,61 +132,25 @@
 
 
 
+            <h2>App preview</h2>
+            <video width="300" height="auto" controls>
+                <source src="videos/iPhone11.mp4" type="video/mp4">
+            </video>
 
 
-            <h2>Screenshots</h2>
+
+            <h2>Website screenshot</h2>
 
 
             <figure>
-                <img src="images/work/rl-analytics/screenshot1.png" width="100%" height="auto" alt="Landing page">
-                <figcaption>Landing page</figcaption>
+                <img src="images/work/experimental-gravity/experimental-gravity-screenshot.png" width="100%" height="auto" alt="Screenshot of experimentalgravity.com">
+                <figcaption>The website uses images, colours, and animations to match those within the game and includes links to its YouTube channel, privacy policy and press kit</figcaption>
             </figure>
 
-            <figure>
-                <img src="images/work/rl-analytics/screenshot2.png" width="100%" height="auto" alt="Login page">
-                <figcaption>Login page</figcaption>
-            </figure>
 
-            <figure>
-                <img src="images/work/rl-analytics/screenshot3.png" width="100%" height="auto" alt="Adding a new match to a session">
-                <figcaption>Adding a new match to a session</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/work/rl-analytics/screenshot4.png" width="100%" height="auto" alt="In-game analytics">
-                <figcaption>In-game analytics</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/work/rl-analytics/screenshot5.png" width="100%" height="auto" alt="Editing a username">
-                <figcaption>Editing a username</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/work/rl-analytics/screenshot6.png" width="100%" height="auto" alt="Teammates can be invited to co-host a session">
-                <figcaption>Teammates can be invited to co-host a session</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/work/rl-analytics/screenshot7.png" width="100%" height="auto" alt="Match results are calculated once the game has finished">
-                <figcaption>Match results are calculated once the game has finished</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/work/rl-analytics/screenshot8.png" width="100%" height="auto" alt="Match history">
-                <figcaption>Match history</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/work/rl-analytics/screenshot9.png" width="100%" height="auto" alt="Viewing details of a match in match history">
-                <figcaption>Viewing details of a match in match history</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/work/rl-analytics/screenshot10.png" width="100%" height="auto" alt="Statistics tracking">
-                <figcaption>Statistics tracking</figcaption>
-            </figure>
-
+            <h2>App trailer</h2>
+            <!-- Max height is approx. #screenshots has left and right padding of 5%, so max width is (approx) 90vw, so max height = 90vw * 315/560 -->
+            <iframe width="560" height="315" style="max-height: 50.625vw;" src="https://www.youtube.com/embed/oNNLfO8Fqfw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
         </section>
@@ -235,13 +182,10 @@
     </footer>
 
 
-    <!-- build:js js/rl-analytics.min.js -->
+    <!-- build:js js/work.min.js -->
     <script type="text/javascript" src="js/nav-menu.js" defer></script>
 
-
     <script type="text/javascript" src="js/in-view.js" defer></script>
-
-    <script type="text/javascript" src="js/particles.js" defer></script>
 
     <!-- endbuild -->
 </body>

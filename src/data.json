@@ -11,6 +11,12 @@
             "cssFile": "404",
             "jsFilename": "404"
         },
+        "experimentalgravity": {
+            "title": "Experimental Gravity | Matthew O'Callaghan",
+            "cssFile": "work",
+            "description": "Experimental Gravity is the unique physics-based puzzle that puts you in control of gravity. Available now on iOS!",
+            "jsFilename": "work"
+        },
         "rl-analytics": {
             "title": "Rocket League Analytics | Matthew O'Callaghan",
             "cssFile": "work",
@@ -46,7 +52,18 @@
                 "Gameplay opens with a tutorial explaining that technology has been developed which enables gravity to be controlled and it's the player's job to test it, before walking them through the simple touch/swipe controls. 140 levels follow, each a colourful puzzle in which the player is tasked with hitting a number of targets with 'Orbs' by manipulating gravity. Every level has its own objectives for achieving three stars. The game offers colour blind options and both UK and US English.",
                 "I developed Experimental Gravity using Unity and C# and designed the vast majority of the game art myself with Inkscape. Being available on both tablet and mobile, the gameplay and UI can adapt to a range of screen sizes, including for devices with a safe area smaller than their screen. Beta testing was conducted using Apple's TestFlight. On completion of the game, app previews and a trailer (available on its <a href=\"https://www.youtube.com/channel/UCesx4XJR_iaRpPF36geNlRA\" target=\"_blank\">YouTube channel</a>) were created using iMovie, and I developed an accompanying website complete with privacy policy and press kit."
             ],
-            "devicons": ["c#", "inkscape", "apple", "html", "css", "js", "gulp", "sass"]
+            "devicons": ["c#", "inkscape", "apple", "html", "css", "js", "gulp", "sass"],
+            "evidence": {
+                "appPreview": "videos/iPhone11.mp4",
+                "websiteScreenshots": [
+                    {
+                        "src": "images/work/experimental-gravity/experimental-gravity-screenshot.png",
+                        "alt": "Screenshot of experimentalgravity.com",
+                        "caption": "The website uses images, colours, and animations to match those within the game and includes links to its YouTube channel, privacy policy and press kit"
+                    }
+                ],
+                "trailer": "https://www.youtube.com/embed/oNNLfO8Fqfw"
+            }
         },
         {
             "title": "Rocket League Analytics",
