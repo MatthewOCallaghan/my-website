@@ -1,0 +1,17 @@
+{% set page = index %}
+{% extends "layout.njk" %}
+
+{% block header %}
+    {% from "macros/navbar.njk" import navbar %}
+    <div id="header-background">
+        <div id="header-background-image" class="bg-ti"></div>
+        {{ navbar(true) }}
+        <div id="header-content">
+            <div>
+                <span class="header-greeting">Hi,</span><br>
+                <span class="header-greeting">I'm Matthew!</span>
+            </div>
+        </div>
+    </div>
+    <div id="image-location" class="vertically-centre">London, United Kingdom</div>
+{% endblock %}

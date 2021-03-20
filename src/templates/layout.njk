@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ page.title }}</title>
+        {% block fonts %}{% endblock %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
+        
+        <!-- build:css css/{{ page.cssName }}.min.css -->
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+        <link rel="stylesheet" type="text/css" href={{ "css/" ~ page.cssName ~ ".css"}}>
+        <!-- endbuild -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content={{ page.description | string }}>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
+    <body>
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        {# <main>
+            {% block main %}{% endblock %}
+        </main>
+        <footer>
+            <div>
+                <h3 class="pc">Navigation</h3>
+                <ul>
+                    <li>
+                        <a href="index.html#about">About</a>
+                    </li>
+                    <li>
+                        <a href="index.html#work">Work</a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="pc">Get in touch</h3>
+                <a href="mailto:hello@matthewocallaghan.uk">hello@matthewocallaghan.uk</a>
+            </div>
+            <div class="vertically-centre">
+                <span class="logo-font pc">MO'C</span>
+                <small>&copy; 2021 Matthew O'Callaghan</small>
+            </div>
+        </footer>
+        {% block scripts %}{% endblock %} #}
+    </body>
+</html>

@@ -14,6 +14,8 @@ const revAll = require('gulp-rev-all'); // Puts hashes in filenames so browser's
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const del = require('del');
+const nunjucksRender = require('gulp-nunjucks-render');
+const data = require('gulp-data');
 const ftp = require('vinyl-ftp');
 const logger = require('fancy-log');
 
@@ -33,6 +35,15 @@ function processSass() {
             .pipe(browserSync.reload({
                 stream: true
             }));
+}
+
+function processNunjucks() {
+    return src('src/pages/**/*.njk')
+        .pipe(data(() => require('./src/data.json')))
+        .pipe(nunjucksRender({
+            path: ['src/templates/']
+        }))
+        .pipe(dest('src'));
 }
 
 function reload(cb) {
@@ -119,3 +130,5 @@ exports.default = series(setupBrowserSync, processSass, watchFiles);
 exports.build = series(cleanDist, processSass, buildFiles);
 
 exports.deploy = deploy;
+
+exports.nunjucks = processNunjucks;
