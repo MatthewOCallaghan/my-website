@@ -6,25 +6,27 @@
 {% endblock %}
 
 {% block style %}
-    :root {
-        --colour: {{ workInfo.colour }};
-    }
+    <style>
+        :root {
+            --colour: {{ workInfo.colour }};
+        }
 
-    h1, h2, a, header, footer h3, .pc {
-        color: var(--colour);
-        border-color: var(--colour);
-    }
-    .bg-pc {
-        background-color: var(--colour);
-    }
-    .outline-pc:focus {
-        outline: auto var(--colour);
-    }
-    @media (hover: hover) {
-        .bg-pc-hover:hover {
+        h1, h2, a, header, footer h3, .pc {
+            color: var(--colour);
+            border-color: var(--colour);
+        }
+        .bg-pc {
             background-color: var(--colour);
         }
-    }
+        .outline-pc:focus {
+            outline: auto var(--colour);
+        }
+        @media (hover: hover) {
+            .bg-pc-hover:hover {
+                background-color: var(--colour);
+            }
+        }
+    </style>
 {% endblock %}
 
 {% block header %}
