@@ -46,10 +46,13 @@ function processNunjucks() {
 
     const manageEnvironment = function(environment) {
 
+        // Get object with details of specific project from work array
         environment.addFilter('getWorkInfo', function(work, page) {
             return work.filter(workItem => workItem.page === page)[0];
         });
 
+        // Count properties in an object
+        // Used in work-template.njk
         environment.addFilter('countProperties', function(obj) {
             return Object.keys(obj).length;
         })
@@ -62,7 +65,7 @@ function processNunjucks() {
             path: ['src/templates/'],
             manageEnv: manageEnvironment
         }))
-        .pipe(htmlPrettify())
+        .pipe(htmlPrettify()) // Corrects indentation to make HTML more readable
         .pipe(dest('src'))
         .pipe(browserSync.reload({
             stream: true
@@ -76,7 +79,7 @@ function reload(cb) {
 
 function watchFiles() {
     watch('src/scss/**/*.scss', processSass);
-    watch(['src/pages/**/*.njk', 'src/templates/**/*.njk'], processNunjucks);
+    watch(['src/pages/**/*.njk', 'src/templates/**/*.njk', 'src/data.json'], processNunjucks);
     watch('src/js/**/*.js', reload);
 }
 
@@ -84,7 +87,7 @@ function buildFiles() {
     const postcssPlugins = [autoprefixer(), cssnano()];
     return src(['src/**/*.html', 'src/images/**/*.+(png|jpg|gif|svg)', 'src/videos/*'])
             .pipe(gulpIf('*.html', useref()))
-            .pipe(gulpIf('*.html', htmlmin({ minifyJS: true, minifyCSS: true, removeComments: true })))
+            .pipe(gulpIf('*.html', htmlmin({ minifyJS: true, minifyCSS: true, removeComments: true, collapseWhitespace: true })))
             .pipe(gulpIf('*.js', babel({ presets: ['@babel/env']})))
             .pipe(gulpIf('*.js', uglify()))
             .pipe(gulpIf('*.css', purgecss({ content: ['src/**/*.html', 'src/**/*.js'] }))) // This should go in postcssPlugins but having tried briefly I couldn't get it to work
@@ -103,15 +106,16 @@ function buildFiles() {
 // }
 
 function deploy() {
+    const config = require('./src/config');
 
-    var connection = ftp.create( {
-        host: 'yali.mythic-beasts.com',
+    const connection = ftp.create( {
+        host: config.host,
         user: process.env.FTP_USERNAME,
         password: process.env.FTP_PASSWORD,
         log: logger.log
     });
 
-    var remoteFolder = '/www/www.matthewocallaghan.uk';
+    const remoteFolder = config.remoteFolder;
 
     return src('dist/**/*', { base: 'dist', buffer: false })
         .pipe(connection.filter(remoteFolder, function(localFile, remoteFile, callback) {

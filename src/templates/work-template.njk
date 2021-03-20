@@ -55,7 +55,7 @@
     <section id="details">
         <h2>Tell me more&nbsp;...</h2>
         {% for line in workInfo.moreDetail %}
-            <p>{{ line }}</p>
+            <p>{{ line | safe }}</p> {# Safe used to stop escaping HTML so link works on Experimental Gravity page (link is to YouTube channel) #}
         {% endfor %}
         {% from "macros/devicons.njk" import iconsRow with context %}
         {{ iconsRow(workInfo.devicons) }}
