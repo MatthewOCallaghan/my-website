@@ -1,0 +1,86 @@
+{% extends "layout.njk" %}
+{% set workInfo = work | getWorkInfo(page) %} {# Set workInfo to be object with details of this project #}
+
+{% block fonts %}
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Permanent+Marker&family=Yellowtail&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block style %}
+    <style>
+        :root {
+            --colour: {{ workInfo.colour }};
+        }
+
+        h1, h2, a, header, footer h3, .pc {
+            color: var(--colour);
+            border-color: var(--colour);
+        }
+        .bg-pc {
+            background-color: var(--colour);
+        }
+        .outline-pc:focus {
+            outline: auto var(--colour);
+        }
+        @media (hover: hover) {
+            .bg-pc-hover:hover {
+                background-color: var(--colour);
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block header %}
+
+    {# Most work pages just use a background image but some (e.g. rl-analytics) do more (so this gives each page the option to override and use block headerBackground) #}
+    {% if workInfo.backgroundImage %}
+        <div id="header-background-image" class="bg-ti" style="background-image: url({{ workInfo.backgroundImage }});"></div>
+    {% else %}
+        {% block headerBackground %}{% endblock %}
+    {% endif %}
+
+    {% include "partials/navbar.njk" %}
+    <h1>{{ workInfo.title }}</h1>
+{% endblock %}
+
+{% block main %}
+    <section id="intro">
+        <div>
+            <p>
+                {{ workInfo.description }}
+            </p>
+        </div>
+        <div>
+            <figure><img src="{{ workInfo.image.src }}" width="auto" height="auto" alt="{{ workInfo.image.alt }}"></figure>
+        </div>
+        <div class="w-100"><a class="button button-ghost bg-pc-hover" href="{{ workInfo.websiteURL }}" target="_blank">View website</a></div>
+    </section>
+    <section id="details">
+        <h2>Tell me more&nbsp;...</h2>
+        {% for line in workInfo.moreDetail %}
+            <p>{{ line | safe }}</p> {# Safe used to stop escaping HTML so link works on Experimental Gravity page (link is to YouTube channel) #}
+        {% endfor %}
+        {% from "macros/devicons.njk" import iconsRow with context %}
+        {{ iconsRow(workInfo.devicons) }}
+    </section>
+    <section id="screenshots">
+
+        {# Only need to override this block if the work has more evidence than just website screenshots #}
+		{% block screenshots %}
+            
+            {# If the only evidence is website screenshots, set title to 'Screenshots', otherwise specify 'Website screenshots' (or use singular equivalents if only one screenshot) #}
+            <h2>{{ ("Website s" if workInfo.evidence | countProperties > 1 or not workInfo.evidence.websiteScreenshots else "S") ~ "creenshot" ~ ("s" if workInfo.evidence.websiteScreenshots.length > 1) }}</h2>
+            
+            {% for screenshot in workInfo.evidence.websiteScreenshots %}
+                <figure>
+                    <img src="{{ screenshot.src }}" width="100%" height="auto" alt="{{ screenshot.alt }}">
+                    {% if screenshot.caption %}<figcaption>{{ screenshot.caption }}</figcaption>{% endif %}
+                </figure>
+            {% endfor %}
+        {% endblock %}
+        
+	</section>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="js/in-view.js" defer></script>
+{% endblock %}

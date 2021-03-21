@@ -1,0 +1,98 @@
+{% set page = "index" %}
+{% extends "layout.njk" %}
+
+{% block fonts %}
+<link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Open+Sans:wght@300&family=Permanent+Marker&family=Yellowtail&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+    <div id="header-background">
+        <div id="header-background-image" class="bg-ti"></div>
+        {% include "partials/navbar.njk" %}
+        <div id="header-content">
+            <div>
+                <span class="header-greeting">Hi,</span><br>
+                <span class="header-greeting">I'm Matthew!</span>
+            </div>
+        </div>
+    </div>
+    <div id="image-location" class="vertically-centre">London, United Kingdom</div>
+{% endblock %}
+
+{% block main %}
+    <section id="about">
+        <div class="section-title">
+            <div class="title bg-pc">About</div>
+        </div>
+        <div class="container vertically-space-evenly">
+            <h1 class="pc">Meet Matthew</h1>
+            <p>
+                I'm a recent Computer Science graduate of the University of Southampton who holds a keen interest in programming, especially web, app and game development.
+            </p>
+            <p>
+                I recently released my first mobile game, <a href="https://www.experimentalgravity.com" target="_blank">Experimental Gravity</a>, on iOS. Experimental Gravity is a physics-based puzzle game that puts the player in control of gravity. I have completed several projects previously (some of which are described below), but this was my first experience of building a complete product and I thoroughly enjoyed taking it from an idea all the way to market. Whilst the majority of my time was spent developing the game using Unity and C#, this project allowed me to employ and experience a wide range of skills, including designing game art, producing app previews and trailers, and beta testing through Apple's TestFlight.
+            </p>
+            <p>
+                My other work includes my third year university project, <a href="http://rocketleagueanalytics.herokuapp.com" target="_blank">Rocket League Analytics</a>, which provides in-game analytics, match history, and statistics tracking to Rocket League players, all with only an image of the match scoreboard.  This is the biggest web project I have undertaken and combines a frontend React app, including Redux and React Router, and backend Node.js server, which uses Google Cloud Vision API and Firebase Authentication amongst other technologies.
+            </p>
+            <p>
+                From my academic studies, I also have experience of programming in Java and Haskell.
+            </p>
+            <p>
+                In the future, I hope to pursue other areas, such as mobile app development (away from gaming and Unity). I also have a keen interest in entrepreneurship and would like to find an opportunity to combine these skills and interests in the near future.
+            </p>
+            {% from "macros/devicons.njk" import iconsRow with context %}
+            {{ iconsRow(["html", "css", "js", "c#", "java", "node", "react", "express", "gulp", "sass", "jquery", "bootstrap", "postgres", "redux", "heroku", "haskell", "inkscape"]) }}
+        </div>
+    </section>
+    <section id="work">
+        <div class="section-title">
+            <div class="title bg-pc">Work</div>
+        </div>
+        <div class="container">
+            <h1 class="pc">Some of my recent work&nbsp;...</h1>
+            <div id="work-list">
+                {% for workItem in work %}
+                {% set even = loop.index % 2 == 0 %} {# Design of work items alternates #}
+                <article class="work-item{{ " bg-pc" if even }}">
+                    <div class="work-item-details">
+                        <h2>{{ workItem.title }}</h2>
+                        <p>
+                            {{ workItem.description }}
+                        </p>
+                    </div>
+                    <div class="work-item-extra">
+                        <figure><img src="{{ workItem.image.src }}" width="auto" height="auto" alt="{{ workItem.image.alt }}"></figure>
+                        <div class="link-list">
+                            <a href="{{ workItem.websiteURL }}" class="button button-filled {{ "button-black bg-pc-hover pc" if even else "button-text-white bg-pc bc-pc pc-hover" }}" target="_blank">View&nbsp;website</a>
+                            <a href="{{ workItem.page }}" class="button button-ghost {{ "button-black pc-hover" if even else "pc bc-pc bg-pc-hover bc-pc-hover" }}">Read&nbsp;more</a>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>	
+        </div>
+    </section>
+    <section id="contact">
+        <div class="section-title">
+            <div class="title bg-pc">Contact</div>
+        </div>
+        <div class="container vertically-space-between">
+            <h1 class="pc">Contact me</h1>
+            <p>Want to get in touch?</p>
+            <p>Then I look forward to hearing from you at <a href="mailto:hello@matthewocallaghan.uk">hello@matthewocallaghan.uk</a>!</p>
+            <span class="logo-font pc">MO'C</span>
+        </div>
+    </section>
+{% endblock %}
+
+{% block remoteScripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" src="js/theme.js" defer></script>
+	<script type="text/javascript" src="js/smooth-scrolling.js" defer></script>
+	<script type="text/javascript" src="js/in-view.js" defer></script>
+	<script type="text/javascript" src="js/work-item-order.js" defer></script>
+{% endblock %}

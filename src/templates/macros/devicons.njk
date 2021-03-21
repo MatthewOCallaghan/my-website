@@ -1,0 +1,7 @@
+{% macro iconsRow(icons) %}
+<div class="icons-div">
+{% for icon in icons %}
+    <span><i class="devicon-{{ devicons[icon] }} colored"></i></span>
+{% endfor %}
+</div>
+{% endmacro %}
