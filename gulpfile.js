@@ -54,7 +54,7 @@ function processNunjucks() {
         // Used in work-template.njk
         environment.addFilter('countProperties', function(obj) {
             return Object.keys(obj).length;
-        })
+        });
 
     }
 

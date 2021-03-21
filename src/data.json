@@ -52,7 +52,7 @@
                 "Gameplay opens with a tutorial explaining that technology has been developed which enables gravity to be controlled and it's the player's job to test it, before walking them through the simple touch/swipe controls. 140 levels follow, each a colourful puzzle in which the player is tasked with hitting a number of targets with 'Orbs' by manipulating gravity. Every level has its own objectives for achieving three stars. The game offers colour blind options and both UK and US English.",
                 "I developed Experimental Gravity using Unity and C# and designed the vast majority of the game art myself with Inkscape. Being available on both tablet and mobile, the gameplay and UI can adapt to a range of screen sizes, including for devices with a safe area smaller than their screen. Beta testing was conducted using Apple's TestFlight. On completion of the game, app previews and a trailer (available on its <a href=\"https://www.youtube.com/channel/UCesx4XJR_iaRpPF36geNlRA\" target=\"_blank\">YouTube channel</a>) were created using iMovie, and I developed an accompanying website complete with privacy policy and press kit."
             ],
-            "devicons": ["c#", "inkscape", "apple", "html", "css", "js", "gulp", "sass"],
+            "devicons": ["c#", "inkscape", "ios", "html", "css", "js", "gulp", "sass"],
             "evidence": {
                 "appPreview": "videos/iPhone11.mp4",
                 "websiteScreenshots": [
@@ -194,25 +194,85 @@
         }
     ],
     "devicons": {
-        "html": "html5-plain",
-        "css": "css3-plain",
-        "js": "javascript-plain",
-        "c#": "csharp-plain",
-        "java": "java-plain",
-        "node": "nodejs-plain",
-        "react": "react-original",
-        "express": "express-original",
-        "gulp": "gulp-plain",
-        "sass": "sass-original",
-        "jquery": "jquery-plain",
-        "bootstrap": "bootstrap-plain",
-        "postgres": "postgresql-plain",
-        "redux": "redux-original",
-        "heroku": "heroku-original",
-        "haskell": "haskell-plain",
-        "inkscape": "inkscape-plain",
-        "googleCloud": "googlecloud-plain",
-        "firebase": "firebase-plain",
-        "apple": "apple-original"
+        "html": {
+            "class": "html5-plain",
+            "title": "HTML"
+        },
+        "css": {
+            "class": "css3-plain",
+            "title": "CSS"
+        },
+        "js": {
+            "class": "javascript-plain",
+            "title": "JavaScript"
+        },
+        "c#": {
+            "class": "csharp-plain",
+            "title": "C#"
+        },
+        "java": {
+            "class": "java-plain",
+            "title": "JavaScript"
+        },
+        "node": {
+            "class": "nodejs-plain",
+            "title": "Node.js"
+        },
+        "react": {
+            "class": "react-original",
+            "title": "React"
+        },
+        "express": {
+            "class": "express-original",
+            "title": "Express"
+        },
+        "gulp": {
+            "class": "gulp-plain",
+            "title": "gulp"
+        },
+        "sass": {
+            "class": "sass-original",
+            "title": "Sass"
+        },
+        "jquery": {
+            "class": "jquery-plain",
+            "title": "jQuery"
+        },
+        "bootstrap": {
+            "class": "bootstrap-plain",
+            "title": "Bootstrap"
+        },
+        "postgres": {
+            "class": "postgresql-plain",
+            "title": "PostgreSQL"
+        },
+        "redux": {
+            "class": "redux-original",
+            "title": "Redux"
+        },
+        "heroku": {
+            "class": "heroku-original",
+            "title": "Heroku"
+        },
+        "haskell": {
+            "class": "haskell-plain",
+            "title": "Haskell"
+        },
+        "inkscape": {
+            "class": "inkscape-plain",
+            "title": "Inkscape"
+        },
+        "googleCloud": {
+            "class": "googlecloud-plain",
+            "title": "Google Cloud"
+        },
+        "firebase": {
+            "class": "firebase-plain",
+            "title": "Firebase"
+        },
+        "ios": {
+            "class": "apple-original",
+            "title": "iOS"
+        }
     }
 }
