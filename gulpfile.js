@@ -79,10 +79,7 @@ function reload(cb) {
 
 function watchFiles() {
     watch('src/scss/**/*.scss', processSass);
-    watch('src/templates/**/*.njk', processNunjucks);
-    watch('src/pages/**/*.njk', processNunjucks);
-    watch('src/data.json', processNunjucks);
-    // watch(['src/pages/**/*.njk', 'src/templates/**/*.njk', 'src/data.json'], processNunjucks);
+    watch(['src/pages/**/*.njk', 'src/templates/**/*.njk', 'src/data.json'], processNunjucks);
     watch('src/js/**/*.js', reload);
 }
 
