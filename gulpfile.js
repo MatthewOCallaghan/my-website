@@ -41,7 +41,6 @@ function processSass() {
             }));
 }
 
-
 function processNunjucks() {
 
     const manageEnvironment = function(environment) {
@@ -106,7 +105,7 @@ function buildFiles() {
 // }
 
 function deploy() {
-    const config = require('./src/config');
+    const config = require('./config');
 
     const connection = ftp.create( {
         host: config.host,
