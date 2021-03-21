@@ -75,6 +75,7 @@
             "websiteURL": "http://rocketleagueanalytics.herokuapp.com",
             "page": "rl-analytics",
             "colour": "orange",
+            "github": "https://github.com/MatthewOCallaghan/rl-analytics",
             "moreDetail": [
                 "When players of the video game Rocket League join a match, they do not know the abilities of their random opponents or teammates.  Furthermore, the game does not record match history or provide statistics tracking.  I decided to address these issues for my final year university project.  Some limited solutions already existed, though these were just for PC players, so I was determined to achieve a solution that console players could use.",
 			    "At the start of each Rocket League match they play, users of my app will submit a screenshot of the in-game scoreboard, from which the app will extract player usernames. This unique feature ensures my app remains platform independent and so available to console players. For the ~15% of names which my app misreads, users can manually edit them. Data on those players is scraped from Rocket League statistics website Tracker Network and presented to the user in an easily-consumable fashion to be absorbed whilst playing. Once the match has concluded, the same data is scraped again and the result can be calculated by identifying the differences in each player's MVPs, goals, wins, assists, saves, and shots. This match data is stored in a PostgreSQL database, enabling the app to also provide users with match history and statistics tracking over time.",
@@ -178,6 +179,7 @@
             "page": "kop-stop",
             "backgroundImage": "images/work/kop-stop/kop-stop-background.jpg",
             "colour": "red",
+            "github": "https://github.com/MatthewOCallaghan/kop-stop",
             "moreDetail": [
                 "Named after the famous stand at Liverpool's stadium Anfield, Kop Stop stores over one hundred songs, each of which has a number of associated tags referencing the players, managers, and clubs they are inspired by.  The lyrics and tags are stored in a PostgreSQL database with the backend being run using Node.js and Express.js.  React allows users to seamlessly search and filter through these songs by their tags.",
 			    "Videos of songs where found are also included, and new song submissions to the site are welcomed and displayed."

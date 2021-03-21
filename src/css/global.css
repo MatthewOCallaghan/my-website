@@ -761,6 +761,8 @@ footer h3 {
         animation-name: nav-appear;
         animation-duration: 0.4s;
         animation-fill-mode: both; }
+      body.nav-open header #navbar nav a.hover-underline::after {
+        bottom: -3px; }
       body.nav-open header #navbar nav a.icon {
         width: 54px;
         height: 54px; }

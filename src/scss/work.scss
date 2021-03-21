@@ -69,6 +69,10 @@ section#intro a {
 	margin-top: 40px;
 }
 
+section#intro div.work-item-links {
+	flex-direction: row;
+}
+
 section#details {
 	background-image: url("../images/backgrounds/brick-wall.png");
 }

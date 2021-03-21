@@ -6,6 +6,9 @@ body {
 .bg-pc {
   background-color: black; }
 
+a.icon svg path {
+  fill: black; }
+
 h1 {
   font-family: 'Yellowtail', cursive;
   font-size: 15vw;
