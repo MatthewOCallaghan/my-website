@@ -109,8 +109,8 @@ function deploy() {
 
     const connection = ftp.create( {
         host: config.host,
-        user: process.env.FTP_USERNAME,
-        password: process.env.FTP_PASSWORD,
+        user: process.env.FTP_USERNAME ?? config.FTP_USERNAME,
+        password: process.env.FTP_PASSWORD ?? config.FTP_PASSWORD,
         log: logger.log
     });
 
