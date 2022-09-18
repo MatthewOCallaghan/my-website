@@ -214,7 +214,7 @@
         },
         "java": {
             "class": "java-plain",
-            "title": "JavaScript"
+            "title": "Java"
         },
         "node": {
             "class": "nodejs-plain",
@@ -275,6 +275,18 @@
         "ios": {
             "class": "apple-original",
             "title": "iOS"
+        },
+        "aws": {
+            "class": "amazonwebservices-original",
+            "title": "AWS"
+        },
+        "angularJs": {
+            "class": "angularjs-plain",
+            "title": "AngularJS"
+        },
+        "jest": {
+            "class": "jest-plain",
+            "title": "Jest"
         }
     }
 }
