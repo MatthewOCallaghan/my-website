@@ -17,24 +17,18 @@
             "description": "Experimental Gravity is the unique physics-based puzzle that puts you in control of gravity. Available now on iOS!",
             "jsFilename": "work"
         },
-        "rl-analytics": {
-            "title": "Rocket League Analytics | Matthew O'Callaghan",
-            "cssFile": "work",
-            "description": "Rocket League Analytics was my third year university project and provides in-game analytics, match history, and statistics tracking for Rocket League players.",
-            "jsFilename": "rl-analytics"
-        },
         "cakesbykatie": {
             "title": "Cakes by Katie | Matthew O'Callaghan",
             "cssFile": "work",
             "description": "Cakes by Katie seeks to showcase the work of an aspiring cake decorator. Katie is always looking to gain clients for new projects so that she can practise her skills.",
             "jsFilename": "work"
         },
-        "kop-stop": {
-            "title": "Kop Stop | Matthew O'Callaghan",
+        "rl-analytics": {
+            "title": "Rocket League Analytics | Matthew O'Callaghan",
             "cssFile": "work",
-            "description": "A project I first started in July 2015, Kop Stop is an online library of Liverpool Football Club songs and chants.",
-            "jsFilename": "work"
-        }
+            "description": "Rocket League Analytics was my third year university project and provides in-game analytics, match history, and statistics tracking for Rocket League players.",
+            "jsFilename": "rl-analytics"
+        }        
     },
     "work": [
         {
@@ -63,6 +57,47 @@
                     }
                 ],
                 "trailer": "https://www.youtube.com/embed/oNNLfO8Fqfw"
+            }
+        },
+        {
+            "title": "Cakes by Katie",
+            "description": "Website for a local cake decorator to display her work and acquire new clients.",
+            "image": {
+                "src": "images/work/cakesbykatie/cakesbykatie.png",
+                "alt": "Cakes by Katie on laptop and mobile"
+            },
+            "websiteURL": "https://www.cakesbykatie.uk",
+            "page": "cakesbykatie",
+            "backgroundImage": "images/work/cakesbykatie/cakesbykatie-background.jpg",
+            "colour": "#f7cac9",
+            "moreDetail": [
+                "An ongoing project of mine is this website for a local cake decorator, who uses the brand name Cakes by Katie. On arriving on the home page, users are greeted by a full width video to display her talents in an easy and engaging manner. This page also includes further information, a preview of her portfolio, a contact section, and a slideshow of glowing testimonials. The website has a separate portfolio page, providing images and videos of her many cakes, that we are regularly adding to.",
+                "My current priorities with this website include improving its position on Google and turning more page views into leads. To achieve these goals I am using Google Search Console and Google Analytics, as well as focusing heavily on optimising page performance. The site, which uses modern web image formats, scores well using Lighthouse."
+            ],
+            "devicons": ["html", "css", "js", "google"],
+            "evidence": {
+                "websiteScreenshots": [
+                    {
+                        "src": "images/work/cakesbykatie/cakesbykatie-screenshot-home.jpg",
+                        "alt": "Screenshot of cakesbykatie.co.uk home page",
+                        "caption": "The home page starts with a striking video of Katie decorating a cake, followed by information about her, a preview of her portfolio, contact information, and testimonials."
+                    },
+                    {
+                        "src": "images/work/cakesbykatie/cakesbykatie-screenshot-portfolio.jpg",
+                        "alt": "Screenshot of portfolio page on cakesbykatie.co.uk",
+                        "caption": "This grid of portfolio images fills the screen width and uses a masonry layout."
+                    },
+                    {
+                        "src": "images/work/cakesbykatie/cakesbykatie-screenshot-portfolio-modal1.jpg",
+                        "alt": "Screenshot of the modal which opens when a cake is selected from the portfolio.",
+                        "caption": "When a cake is selected from the portfolio, a full screen modal opens which can contain a description, testimonial, videos and further images. This particular example provides more images covering all angles of the cake."
+                    },
+                    {
+                        "src": "images/work/cakesbykatie/cakesbykatie-screenshot-portfolio-modal2.jpg",
+                        "alt": "Another screenshot of the modal which opens when a cake is selected from the portfolio, this one including a video.",
+                        "caption": "Here is another example of a cake from the portfolio being selected. This one includes a video which autoplays when the modal is opened."
+                    }
+                ]
             }
         },
         {
@@ -134,62 +169,6 @@
                         "src": "images/work/rl-analytics/screenshot10.png",
                         "alt": "Statistics tracking",
                         "caption": "Statistics tracking"
-                    }
-                ]
-            }
-        },
-        {
-            "title": "Cakes by Katie",
-            "description": "Personal website for an aspiring cake decorator to display her work and gain clients for new projects to practise her skills.",
-            "image": {
-                "src": "images/work/cakesbykatie/cakesbykatie.png",
-                "alt": "Cakes by Katie on laptop and mobile"
-            },
-            "websiteURL": "https://www.cakesbykatie.uk",
-            "page": "cakesbykatie",
-            "backgroundImage": "images/work/cakesbykatie/cakesbykatie-background.jpg",
-            "colour": "rgb(252,142,172)",
-            "moreDetail": [
-                "Cakes by Katie seeks to showcase the work of an up-and-coming cake artist and appeal to potential clients who would like a high-quality cake at cost price.  This website aims to provide her with a more professional web presence than just her Instagram account as she embarks on her new career.  A light colour scheme and spacious layout creates a feel of elegance and quality, whilst cursive fonts are used to give it a more personal touch."
-            ],
-            "devicons": ["html", "css", "js", "jquery", "bootstrap"],
-            "evidence": {
-                "websiteScreenshots": [
-                    {
-                        "src": "images/work/cakesbykatie/cakesbykatie-screenshot1.jpg",
-                        "alt": "Screenshot of cakesbykatie.co.uk",
-                        "caption": "cakesbykatie.co.uk is a one page website"
-                    },
-                    {
-                        "src": "images/work/cakesbykatie/cakesbykatie-screenshot2.jpg",
-                        "alt": "Screenshot of portfolio modal open on cakesbykatie.co.uk",
-                        "caption": "Portfolio images can be clicked for more detail"
-                    }
-                ]
-            }
-        },
-        {
-            "title": "Kop Stop",
-            "description": "A project I first started in July 2015, Kop Stop is an online library of Liverpool Football Club songs and chants. In its first three years, the site received multiple updates, the latest of which saw me transform it into a database-driven React app, with users now able to filter and search through the numerous sets of lyrics.",
-            "image": {
-                "src": "images/work/kop-stop/kop_stop_screenshots_small.png",
-                "alt": "Kop Stop on laptop and mobile"
-            },
-            "websiteURL": "http://www.kopstop.co.uk",
-            "page": "kop-stop",
-            "backgroundImage": "images/work/kop-stop/kop-stop-background.jpg",
-            "colour": "red",
-            "github": "https://github.com/MatthewOCallaghan/kop-stop",
-            "moreDetail": [
-                "Named after the famous stand at Liverpool's stadium Anfield, Kop Stop stores over one hundred songs, each of which has a number of associated tags referencing the players, managers, and clubs they are inspired by.  The lyrics and tags are stored in a PostgreSQL database with the backend being run using Node.js and Express.js.  React allows users to seamlessly search and filter through these songs by their tags.",
-			    "Videos of songs where found are also included, and new song submissions to the site are welcomed and displayed."
-            ],
-            "devicons": ["html", "css", "js", "react", "node", "express", "bootstrap", "postgres", "heroku"],
-            "evidence": {
-                "websiteScreenshots": [
-                    {
-                        "src": "images/work/kop-stop/kop-stop-screenshot1.jpg",
-                        "alt": "Screenshot of kopstop.co.uk"
                     }
                 ]
             }
@@ -287,6 +266,10 @@
         "jest": {
             "class": "jest-plain",
             "title": "Jest"
+        },
+        "google": {
+            "class": "google-plain",
+            "title": "Google"
         }
     }
 }
