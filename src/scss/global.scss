@@ -338,7 +338,7 @@ footer h3 {
 }
 
 /* Bigger font on larger screens */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 880px) {
 	h1 {
 		font-size: 6rem;
 		font-weight: normal;
@@ -411,7 +411,7 @@ footer h3 {
 				box-shadow: black 2px 2px 2px;
 			}
 
-			@for $i from 1 through 4 {
+			@for $i from 1 through 5 {
 				&:nth-child(#{$i}) {
 					animation-delay: 0.3s * $i + 0.2s; // First link after 0.5s, bring rest in 0.3s after previous
 				}
