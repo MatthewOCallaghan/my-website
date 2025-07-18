@@ -3,7 +3,7 @@
         "index": {
             "title": "Matthew O'Callaghan",
             "cssFile": "index",
-            "description": "I'm a recent Computer Science graduate with an interest in web, app, and game development.",
+            "description": "First class Computer Science graduate with strong frontend and backend development experience and a passion for UX design.",
             "jsFilename": "index"
         },
         "404": {
@@ -20,7 +20,7 @@
         "cakesbykatie": {
             "title": "Cakes by Katie | Matthew O'Callaghan",
             "cssFile": "work",
-            "description": "Cakes by Katie seeks to showcase the work of an aspiring cake decorator. Katie is always looking to gain clients for new projects so that she can practise her skills.",
+            "description": "Cakes by Katie is a local cake maker whose website I design, develop and maintain. This website is Katie's primary source of customer acquistion.",
             "jsFilename": "work"
         },
         "rl-analytics": {
@@ -71,8 +71,9 @@
             "backgroundImage": "images/work/cakesbykatie/cakesbykatie-background.jpg",
             "colour": "#f7cac9",
             "moreDetail": [
-                "An ongoing project of mine is this website for a local cake decorator, who uses the brand name Cakes by Katie. On arriving on the home page, users are greeted by a full width video to display her talents in an easy and engaging manner. This page also includes further information, a preview of her portfolio, a contact section, and a slideshow of glowing testimonials. The website has a separate portfolio page, providing images and videos of her many cakes, that we are regularly adding to.",
-                "My current priorities with this website include improving its position on Google and turning more page views into leads. To achieve these goals I am using Google Search Console and Google Analytics, as well as focusing heavily on optimising page performance. The site, which uses modern web image formats, scores well using Lighthouse."
+                "I design, develop and maintain the website of a local cake decorator who uses the brand name Cakes by Katie. This website is Katie's primary method of acquiring customers and has played a significant role in making a quick success of a young business.",
+                "On arriving on the home page, users are greeted by an engaging full screen video to immediately display Katie's talents. The site structure includes a portfolio page, a page for each product and occasion, as well as other informational pages, making the site easy to navigate and maximises the site's search engine performance.",
+                "Obviously the primary goal of this website is to gain clients, and we regularly review Google analytics, Google Search Console, and Hotjar data to improve our customer acquistion. The website, which uses modern web image formats and scores well using Lighthouse, ranks well on search engines compared to similar competing businesses."
             ],
             "devicons": ["html", "css", "js", "google"],
             "evidence": {
@@ -80,12 +81,22 @@
                     {
                         "src": "images/work/cakesbykatie/cakesbykatie-screenshot-home.jpg",
                         "alt": "Screenshot of cakesbykatie.co.uk home page",
-                        "caption": "The home page starts with a striking video of Katie decorating a cake, followed by information about her, a preview of her portfolio, contact information, and testimonials."
+                        "caption": "The home page starts with a striking video of Katie decorating a cake above the fold, followed by information about her, a preview of her portfolio, a magazine feature, contact information, and testimonials."
+                    },
+                    {
+                        "src": "images/work/cakesbykatie/cakesbykatie-screenshot-wedding-cakes.jpg",
+                        "alt": "Screenshot of wedding cakes page on cakesbykatie.co.uk",
+                        "caption": "There is a page for each product (celebration cakes, wedding cakes, cupcakes, etc.). Above the fold we have a summary of the service and a rotating carousel of images, followed by design ideas, pricing information, suggestions of other products, and any other relevant content."
+                    },
+                    {
+                        "src": "images/work/cakesbykatie/cakesbykatie-screenshot-birthdays.jpg",
+                        "alt": "Screenshot of wedding cakes page on cakesbykatie.co.uk",
+                        "caption": "There is a page for each occasion (birthdays, weddings, etc.). This page includes links to each relevant product page, tailored to the occasion."
                     },
                     {
                         "src": "images/work/cakesbykatie/cakesbykatie-screenshot-portfolio.jpg",
                         "alt": "Screenshot of portfolio page on cakesbykatie.co.uk",
-                        "caption": "This grid of portfolio images fills the screen width and uses a masonry layout."
+                        "caption": "The grid of images on the portfolio page fills the screen width and uses a masonry layout."
                     },
                     {
                         "src": "images/work/cakesbykatie/cakesbykatie-screenshot-portfolio-modal1.jpg",
@@ -256,7 +267,7 @@
             "title": "iOS"
         },
         "aws": {
-            "class": "amazonwebservices-original",
+            "class": "amazonwebservices-plain-wordmark",
             "title": "AWS"
         },
         "angularJs": {
