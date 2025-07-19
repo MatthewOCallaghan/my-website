@@ -194,7 +194,7 @@ main section:last-child {
 	animation-duration: 0.5s;
     animation-fill-mode: both;
     
-    @for $i from 1 through 20 {
+    @for $i from 1 through 23 {
         &:nth-child(#{$i}) {
             animation-delay: 0.2s * $i;
         }

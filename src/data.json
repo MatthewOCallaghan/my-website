@@ -281,6 +281,18 @@
         "google": {
             "class": "google-plain",
             "title": "Google"
+        },
+        "typescript": {
+            "class": "typescript-plain",
+            "title": "TypeScript"
+        },
+        "next": {
+            "class": "nextjs-plain",
+            "title": "Next.js"
+        },
+        "figma": {
+            "class": "figma-plain",
+            "title": "Figma"
         }
     }
 }
