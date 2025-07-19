@@ -293,6 +293,10 @@
         "figma": {
             "class": "figma-plain",
             "title": "Figma"
+        },
+        "tailwind": {
+            "class": "tailwindcss-plain",
+            "title": "Tailwind CSS"
         }
     }
 }

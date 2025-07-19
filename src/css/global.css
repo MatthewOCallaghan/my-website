@@ -506,6 +506,8 @@ main section:last-child {
     animation-delay: 4.4s; }
   .icons-div.in-view span:nth-child(23) {
     animation-delay: 4.6s; }
+  .icons-div.in-view span:nth-child(24) {
+    animation-delay: 4.8s; }
 
 @keyframes fade-in {
   from {
