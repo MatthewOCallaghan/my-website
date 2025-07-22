@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exams app prototype | Matthew O&#39;Callaghan</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Permanent+Marker&family=Yellowtail&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- build:css css/work.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/work.css">
+    <!-- endbuild -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I am currently working on a prototype for an exams preparation app. It will use a highly targeted and efficient alternative approach I found success with during my own studies.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+
+    <style>
+        :root {
+            --colour: rgb(192,132,252);
+        }
+
+        h1, h2, a, header, footer h3, .pc, .pc-hover:hover {
+            color: var(--colour);
+            border-color: var(--colour);
+        }
+        .bg-pc {
+            background-color: var(--colour);
+        }
+        .outline-pc:focus {
+            outline: auto var(--colour);
+        }
+        @media (hover: hover) {
+            .bg-pc-hover:hover {
+                background-color: var(--colour);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+
+
+
+        <div id="header-background-image" class="bg-ti" style="background-image: url(images/work/exams-app/library-background.jpg);"></div>
+
+
+        <div id="navbar">
+
+            <a href="index.html" class="logo logo-font pc">MO'C</a>
+
+            <button id="nav-toggle" class="outline-pc" type="button" aria-label="Toggle menu">
+                <div id="hamburger">
+                    <span class="bg-pc"></span>
+                    <span class="bg-pc"></span>
+                    <span class="bg-pc"></span>
+                </div>
+                <div id="cross">
+                    <span class="bg-pc"></span>
+                    <span class="bg-pc"></span>
+                </div>
+            </button>
+            <nav>
+                <a href="index.html#about" class="hover-underline">About</a>
+                <a href="index.html#work" class="hover-underline">Work</a>
+                <a href="index.html#contact" class="hover-underline">Contact</a>
+                <a href="https://github.com/MatthewOCallaghan" class="icon">
+                    <svg viewBox="0 0 128 128" width="100%" height="100%">
+                        <g fill="#fff">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"></path>
+                            <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm-.743-.55M28.93 94.535c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zm-.575-.618M31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm0 0M34.573 101.373c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm0 0M39.073 103.324c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm0 0M44.016 103.685c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm0 0M48.614 102.903c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"></path>
+                        </g>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/matthew-ocallaghan/" class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
+                        <path fill="#fff" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        />
+                    </svg>
+                </a>
+            </nav>
+        </div>
+        <h1>Exams app</h1>
+
+    </header>
+    <main>
+
+        <section id="intro">
+            <div>
+                <p>
+                    Work-in-progress prototype of an app that will provide highly efficient and targeted preparation for exams.
+                </p>
+            </div>
+            <div>
+                <figure>
+                    <img src="images/work/exams-app/app-mac.png" width="auto" height="auto" alt="Exams app prototype on Mac">
+                </figure>
+            </div>
+
+            <div class="work-item-links w-100">
+                <a class="button button-filled button-text-white bg-pc bc-pc pc-hover" href="https://exams-app-omega.vercel.app" target="_blank">View&nbsp;website</a>
+
+            </div>
+        </section>
+        <section id="details">
+            <h2>Tell me more&nbsp;...</h2>
+
+            <p>Imagine an academic examiner asks you three questions on neuroscience. Each requires only a short answer, but they're all very difficult and it would quickly become obvious you know nothing about neuroscience. Now imagine instead the examiner
+                shows you a list of five possible questions, but this time says they'll return next week to ask you three of them at random. Over that week you'd likely find the answers to those five questions - perhaps with Google, AI, or even by asking
+                an expert. By the time the examiner returns, you'd have memorised those five short answers. Your limited understanding of neuroscience doesn't matter - when questioned, you'd deliver fluent, rehearsed responses to whichever three questions
+                get put to you and everyone would think you're an expert.</p>
+
+            <p>That's how academic assessment works.</p>
+
+            <p>When I was fifteen, my school year group sat our science GCSE a year early. When we did our mock exams, everyone in my biology class was underperforming by about two grades. A friend's mother, who was a teacher, explained to me that she'd
+                been going through the biology course's official specification with him to help. I had no idea what a specification was so she showed me, and I found myself looking at a list of exactly what I needed to know for the exam. In hindsight
+                of course such documents had to exist, but most students never see one, let alone use them.</p>
+
+            <p>I was stunned. The wording of the specification mirrored past exam questions and mark schemes, and the scope of content was far smaller than our hefty textbooks implied. I realised that if I had a list of everything I needed to know for the
+                exam, then I effectively had a list of all possible questions. I could simply memorise the answer to each of them.</p>
+
+            <p>Two months after that disastrous mock exam, I achieved full marks in the real biology paper.</p>
+
+            <p>I would continue to learn over the next three years through GCSEs and A-Levels how deeply flawed academic assessment is. Now that I understood the system, I only ever achieved top marks again.</p>
+
+            <p>I have always wanted to create a product that uses these insights to help students raise their grades. My ambition is to create a web and mobile app that rivals textbooks by walking users through each course's official specification, helping
+                them learn only the exact content they need. With many exams containing large amounts of theory that can be memorised with little academic skill, the app would emphasise short, flashcard-style content designed for effective recall.</p>
+
+            <p>As a first step towards this product, I've developed a tool to map past questions for a particular exam to the exact parts of its specification. I have selected AQA AS Computer Science Paper 2 for my prototype as it's a course I know well
+                having sat it myself. The tool is built using Next.js and hosted on Vercel, with automatic deployments via GitHub CI/CD integration. Tailwind CSS handles the styling. I used ChatGPT to extract structured JSON from PDF documents including
+                the specification, past papers, and mark schemes.</p>
+
+
+
+            <div class="icons-div">
+
+                <span title="Next.js"><i class="devicon-nextjs-plain colored"></i></span>
+
+                <span title="React"><i class="devicon-react-original colored"></i></span>
+
+                <span title="TypeScript"><i class="devicon-typescript-plain colored"></i></span>
+
+                <span title="HTML"><i class="devicon-html5-plain colored"></i></span>
+
+                <span title="CSS"><i class="devicon-css3-plain colored"></i></span>
+
+                <span title="Tailwind CSS"><i class="devicon-tailwindcss-plain colored"></i></span>
+
+                <span title="Vercel"><i class="devicon-vercel-original colored"></i></span>
+
+            </div>
+
+        </section>
+        <section id="screenshots">
+
+
+
+
+
+            <h2>Screenshots</h2>
+
+
+            <figure>
+                <img src="images/work/exams-app/screenshot-papers.jpg" width="100%" height="auto" alt="Screenshot of &quot;Past papers&quot; page in exams app.">
+                <figcaption>Users can view past paper questions and see which parts of the specification they each examine.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/work/exams-app/screenshot-specification.jpg" width="100%" height="auto" alt="Screenshot of &quot;Specification&quot; page in exams app.">
+                <figcaption>The official specification for the course has been broken down into more granular points. Statistics are shown for each point and users can view which past paper questions cover each of them.</figcaption>
+            </figure>
+
+
+
+        </section>
+
+    </main>
+    <footer>
+        <div>
+            <h3 class="pc">Navigation</h3>
+            <ul>
+                <li>
+                    <a href="index.html#about">About</a>
+                </li>
+                <li>
+                    <a href="index.html#work">Work</a>
+                </li>
+                <li>
+                    <a href="index.html#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="pc">Resources</h3>
+            <ul>
+                <li>
+                    <a href="https://github.com/MatthewOCallaghan">GitHub</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/matthew-ocallaghan/">LinkedIn</a>
+                </li>
+                <li>
+                    <a href="cv.pdf">CV</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="pc">Get in touch</h3>
+            <a href="mailto:hello@matthewocallaghan.uk">hello@matthewocallaghan.uk</a>
+        </div>
+        <div class="vertically-centre">
+            <span class="logo-font pc">MO'C</span>
+            <small>&copy; 2025 Matthew O'Callaghan</small>
+        </div>
+    </footer>
+
+
+    <!-- build:js js/work.min.js -->
+    <script type="text/javascript" src="js/nav-menu.js" defer></script>
+
+    <script type="text/javascript" src="js/in-view.js" defer></script>
+
+    <!-- endbuild -->
+</body>
+
+</html>
