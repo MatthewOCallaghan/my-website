@@ -1,4 +1,5 @@
 const { src, dest, watch, series, parallel } = require('gulp');
+const fs = require('fs');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const useref = require('gulp-useref'); // Concatenates js and css files
@@ -16,9 +17,11 @@ const cache = require('gulp-cache');
 const del = require('del');
 const nunjucksRender = require('gulp-nunjucks-render');
 const htmlPrettify = require('gulp-html-prettify');
-const data = require('gulp-data');
+const processData = require('gulp-data');
 const ftp = require('vinyl-ftp');
 const logger = require('fancy-log');
+
+let data = require('./src/data.json');
 
 function setupBrowserSync(cb) {
     browserSync.init({
@@ -59,7 +62,7 @@ function processNunjucks() {
     }
 
     return src('src/pages/**/*.njk')
-        .pipe(data(() => require('./src/data.json')))
+        .pipe(processData(data))
         .pipe(nunjucksRender({
             path: ['src/templates/'],
             manageEnv: manageEnvironment
@@ -77,6 +80,17 @@ function reload(cb) {
 }
 
 function watchFiles() {
+    watch(
+        'src/data.json',
+        series(
+            cb => {
+                // Fetch updated data
+                data = JSON.parse(fs.readFileSync('./src/data.json', 'utf8'));
+                cb();
+            },
+            processNunjucks
+        )
+    );
     watch('src/scss/**/*.scss', processSass);
     watch(['src/pages/**/*.njk', 'src/templates/**/*.njk', 'src/data.json'], processNunjucks);
     watch('src/js/**/*.js', reload);
