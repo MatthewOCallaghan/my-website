@@ -23,8 +23,8 @@
             "description": "Cakes by Katie is a local cake maker whose website I design, develop and maintain. This website is Katie's primary source of customer acquistion.",
             "jsFilename": "work"
         },
-        "exams-app": {
-            "title": "Exams app prototype | Matthew O'Callaghan",
+        "atomicexams": {
+            "title": "Atomic Exams | Matthew O'Callaghan",
             "cssFile": "work",
             "description": "I am currently working on a prototype for an exams preparation app. It will use a highly targeted and efficient alternative approach I found success with during my own studies.",
             "jsFilename": "work"
@@ -118,15 +118,15 @@
             }
         },
         {
-            "title": "Exams app",
+            "title": "Atomic Exams",
             "description": "Work-in-progress prototype of an app that will provide highly efficient and targeted preparation for exams.",
             "image": {
                 "src": "images/work/exams-app/app-mac.png",
-                "alt": "Exams app prototype on Mac"
+                "alt": "Atomic Exams prototype on Mac"
             },
-            "websiteURL": "https://exams-app-omega.vercel.app",
-            "page": "exams-app",
-            "colour": "rgb(192,132,252)",
+            "websiteURL": "https://www.atomicexams.co.uk",
+            "page": "atomicexams",
+            "colour": "#35dc39",
             "backgroundImage": "images/work/exams-app/library-background.jpg",
             "moreDetail": [
                 "Imagine an academic examiner asks you three questions on neuroscience. Each requires only a short answer, but they're all very difficult and it would quickly become obvious you know nothing about neuroscience. Now imagine instead the examiner shows you a list of five possible questions, but this time says they'll return next week to ask you three of them at random. Over that week you'd likely find the answers to those five questions - perhaps with Google, AI, or even by asking an expert. By the time the examiner returns, you'd have memorised those five short answers. Your limited understanding of neuroscience doesn't matter - when questioned, you'd deliver fluent, rehearsed responses to whichever three questions get put to you and everyone would think you're an expert.",
@@ -136,19 +136,20 @@
                 "Two months after that disastrous mock exam, I achieved full marks in the real biology paper.",
                 "I would continue to learn over the next three years through GCSEs and A-Levels how deeply flawed academic assessment is. Now that I understood the system, I only ever achieved top marks again.",
                 "I have always wanted to create a product that uses these insights to help students raise their grades. My ambition is to create a web and mobile app that rivals textbooks by walking users through each course's official specification, helping them learn only the exact content they need. With many exams containing large amounts of theory that can be memorised with little academic skill, the app would emphasise short, flashcard-style content designed for effective recall.",
-                "As a first step towards this product, I've developed a tool to map past questions for a particular exam to the exact parts of its specification. I have selected AQA AS Computer Science Paper 2 for my prototype as it's a course I know well having sat it myself. The tool is built using Next.js and hosted on Vercel, with automatic deployments via GitHub CI/CD integration. Tailwind CSS handles the styling. I used ChatGPT to extract structured JSON from PDF documents including the specification, past papers, and mark schemes."
+                "As a first step towards this product, I've developed a tool to map past questions for a particular exam to the exact parts of its specification. I have selected AQA AS Computer Science Paper 2 for my prototype as it's a course I know well having sat it myself. The tool is built using Next.js and hosted on Vercel, with automatic deployments via GitHub CI/CD integration. Tailwind CSS handles the styling. I used ChatGPT to extract structured JSON from PDF documents including the specification, past papers, and mark schemes.",
+                "I have developed a landing page for this product using Astro."
             ],
-            "devicons": ["next", "react", "typescript", "html", "css", "tailwind", "vercel"],
+            "devicons": ["next", "react", "typescript", "html", "css", "tailwind", "vercel", "astro"],
             "evidence": {
                 "websiteScreenshots": [
                     {
                         "src": "images/work/exams-app/screenshot-papers.jpg",
-                        "alt": "Screenshot of \"Past papers\" page in exams app.",
+                        "alt": "Screenshot of \"Past papers\" page in Atomic Exams app.",
                         "caption": "Users can view past paper questions and see which parts of the specification they each examine."
                     },
                     {
                         "src": "images/work/exams-app/screenshot-specification.jpg",
-                        "alt": "Screenshot of \"Specification\" page in exams app.",
+                        "alt": "Screenshot of \"Specification\" page in Atomic Exams app.",
                         "caption": "The official specification for the course has been broken down into more granular points. Statistics are shown for each point and users can view which past paper questions cover each of them."
                     }
                 ]
@@ -344,6 +345,10 @@
         "vercel": {
             "class": "vercel-original",
             "title": "Vercel"
+        },
+        "astro": {
+            "class": "astro-plain",
+            "title": "Astro"
         }
     }
 }
