@@ -121,13 +121,13 @@
             "title": "Atomic Exams",
             "description": "Work-in-progress prototype of an app that will provide highly efficient and targeted preparation for exams.",
             "image": {
-                "src": "images/work/exams-app/app-mac.png",
+                "src": "images/work/atomicexams/device-mockup.png",
                 "alt": "Atomic Exams prototype on Mac"
             },
             "websiteURL": "https://www.atomicexams.co.uk",
             "page": "atomicexams",
             "colour": "#35dc39",
-            "backgroundImage": "images/work/exams-app/library-background.jpg",
+            "backgroundImage": "images/work/atomicexams/library-background.jpg",
             "moreDetail": [
                 "Imagine an academic examiner asks you three questions on neuroscience. Each requires only a short answer, but they're all very difficult and it would quickly become obvious you know nothing about neuroscience. Now imagine instead the examiner shows you a list of five possible questions, but this time says they'll return next week to ask you three of them at random. Over that week you'd likely find the answers to those five questions - perhaps with Google, AI, or even by asking an expert. By the time the examiner returns, you'd have memorised those five short answers. Your limited understanding of neuroscience doesn't matter - when questioned, you'd deliver fluent, rehearsed responses to whichever three questions get put to you and everyone would think you're an expert.",
                 "That's how academic assessment works.",
@@ -143,12 +143,17 @@
             "evidence": {
                 "websiteScreenshots": [
                     {
-                        "src": "images/work/exams-app/screenshot-papers.jpg",
+                        "src": "images/work/atomicexams/screenshot-landing-page.jpg",
+                        "alt": "Screenshot of Atomic Exams landing page.",
+                        "caption": "Landing page details approach, explains product ambitions and introduces current prototype."
+                    },
+                    {
+                        "src": "images/work/atomicexams/screenshot-papers.jpg",
                         "alt": "Screenshot of \"Past papers\" page in Atomic Exams app.",
                         "caption": "Users can view past paper questions and see which parts of the specification they each examine."
                     },
                     {
-                        "src": "images/work/exams-app/screenshot-specification.jpg",
+                        "src": "images/work/atomicexams/screenshot-specification.jpg",
                         "alt": "Screenshot of \"Specification\" page in Atomic Exams app.",
                         "caption": "The official specification for the course has been broken down into more granular points. Statistics are shown for each point and users can view which past paper questions cover each of them."
                     }
