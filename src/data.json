@@ -52,7 +52,7 @@
                 "Gameplay opens with a tutorial explaining that technology has been developed which enables gravity to be controlled and it's the player's job to test it, before walking them through the simple touch/swipe controls. 140 levels follow, each a colourful puzzle in which the player is tasked with hitting a number of targets with 'Orbs' by manipulating gravity. Every level has its own objectives for achieving three stars. The game offers colour blind options and both UK and US English.",
                 "I developed Experimental Gravity using Unity and C# and designed the vast majority of the game art myself with Inkscape. Being available on both tablet and mobile, the gameplay and UI can adapt to a range of screen sizes, including for devices with a safe area smaller than their screen. Beta testing was conducted using Apple's TestFlight. On completion of the game, app previews and a trailer (available on its <a href=\"https://www.youtube.com/channel/UCesx4XJR_iaRpPF36geNlRA\" target=\"_blank\">YouTube channel</a>) were created using iMovie, and I developed an accompanying website complete with privacy policy and press kit."
             ],
-            "devicons": ["c#", "inkscape", "ios", "html", "css", "js", "gulp", "sass"],
+            "devicons": ["unity", "c#", "inkscape", "ios", "html", "css", "js", "gulp", "sass"],
             "evidence": {
                 "appPreview": "videos/iPhone11.mp4",
                 "websiteScreenshots": [
@@ -77,11 +77,12 @@
             "backgroundImage": "images/work/cakesbykatie/cakesbykatie-background.jpg",
             "colour": "#f7cac9",
             "moreDetail": [
-                "I design, develop and maintain the website of a local cake decorator who uses the brand name Cakes by Katie. This website is Katie's primary method of acquiring customers and has played a significant role in making a quick success of a young business.",
-                "On arriving on the home page, users are greeted by an engaging full screen video to immediately display Katie's talents. The site structure includes a portfolio page, a page for each product and occasion, as well as other informational pages, making the site easy to navigate and maximises the site's search engine performance.",
-                "Obviously the primary goal of this website is to gain clients, and we regularly review Google analytics, Google Search Console, and Hotjar data to improve our customer acquistion. The website, which uses modern web image formats and scores well using Lighthouse, ranks well on search engines compared to similar competing businesses."
+                "I design, develop and maintain the website of local cake maker Cakes by Katie, which serves as their primary customer acquisition channel and has contributed significantly to the early success of the business.",
+                "Visitors arriving on the homepage are welcomed by a full-screen video that immediately showcases Katie's creativity and skill. The site includes a portfolio, individual pages for each product and occasion, and supporting informational pages - designed to be both user-friendly and optimised for search engines.",
+                "Driving customer acquisition is the site's main goal. We regularly review insights from Google Analytics, Google Search Console, and Hotjar to identify areas for improvement. The site makes use of modern web image formats, performs well in Lighthouse audits, and ranks highly in search results compared to local competitors.",
+                "The site is built using a lightweight static stack including Gulp for task automation, Nunjucks for templating, and Sass for styling."
             ],
-            "devicons": ["html", "css", "js", "google"],
+            "devicons": ["html", "css", "js", "gulp", "google"],
             "evidence": {
                 "websiteScreenshots": [
                     {
@@ -354,6 +355,10 @@
         "astro": {
             "class": "astro-plain",
             "title": "Astro"
+        },
+        "unity": {
+            "class": "unity-plain",
+            "title": "Unity"
         }
     }
 }
