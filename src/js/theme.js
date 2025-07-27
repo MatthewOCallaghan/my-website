@@ -47,16 +47,20 @@ function changeTheme(newThemeIndex) {
 }
 
 function manageTheme() {
+	
+	// Browser optimisations mess with my removing and re-adding the class theme-duration-bar
+	// `offsetWidth` forces a reflow and we do this before and after removing the class to ensure all changes are flushed
+	// Safari was particularly difficult and required both these steps, whereas Chrome only required the second
+	void document.getElementById('header-background').offsetWidth;
+
 	if(document.getElementById('header-background').classList) {
 		document.getElementById('header-background').classList.remove('theme-duration-bar');
 	}
 	
-	// Forces browser to remove theme-duration-bar before continuing with script (this is because it must make changes in order to calculate offsetWidth)
-	// Otherwise browser would only make changes at end of script and it would see class has been removed and added again, so nothing has changed, so it would do nothing
-	void document.getElementById('header-background').offsetWidth; 
-
+	void document.getElementById('header-background').offsetWidth;
 
 	document.getElementById('header-background').classList.add('theme-duration-bar');
+
 	nextTheme++;
 	if(nextTheme >= themes.length) {
 		nextTheme = 0;

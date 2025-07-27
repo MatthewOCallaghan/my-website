@@ -34,7 +34,7 @@ $sectionPaddingX: 7.5lvh;
     transition: background-image 2s;
 
 	// gulp-postcss couldn't pass lvh unit in the calc, works with this workaround
-	--padding: $sectionPaddingX;
+	--padding: #{$sectionPaddingX};
     top: calc(var(--padding) - 1rem);
 }
 
