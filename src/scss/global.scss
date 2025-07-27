@@ -30,8 +30,10 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
+@media (hover:hover) {
+	a:hover {
+		text-decoration: underline;
+	}
 }
 
 p {
@@ -216,7 +218,9 @@ header #header-background-image {
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100%;
+	top: 0;
+	left: 0;
+    height: 100lvh;
     width: 100%;
     z-index: -5;
     position: fixed;
@@ -272,8 +276,10 @@ header #navbar nav a.icon {
 	transition: transform 0.4s;
 }
 
-#navbar nav a.icon:hover svg {
-	transform: rotateY(360deg);
+@media (hover: hover) {
+	#navbar nav a.icon:hover svg {
+		transform: rotateY(360deg);
+	}
 }
 
 #navbar nav a.hover-underline::after {
@@ -288,8 +294,10 @@ header #navbar nav a.icon {
 	box-shadow: black 1px 1px 1px;
 }
 
-header #navbar nav a.hover-underline:hover::after {
-	width: 100%;
+@media (hover: hover) {
+	header #navbar nav a.hover-underline:hover::after {
+		width: 100%;
+	}
 }
 
 footer {
@@ -513,11 +521,11 @@ footer h3 {
 
 	body.nav-open {
 		overflow: hidden;
-		height: 100vh;
+		height: 100svh;
 
 		#navbar {
 			display: grid;
-			min-height: 100vh;
+			min-height: 100svh;
 			width: 100%;
 			grid-template-columns: min-content 1fr min-content;
 			grid-template-rows: min-content 1fr;
