@@ -5,9 +5,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Open+Sans:wght@300&family=Permanent+Marker&family=Yellowtail&display=swap" rel="stylesheet">
 {% endblock %}
 
+{% block style %}
+    <style>
+        :root {
+            /* First colour in rotation is red. */
+            --colour: #F00;
+        }
+    </style>
+{% endblock %}
+
 {% block header %}
     <div id="header-background">
-        <div id="header-background-image" class="bg-ti"></div>
+        <div id="header-background-image"></div>
         {% include "partials/navbar.njk" %}
         <div id="header-content">
             <div>

@@ -57,6 +57,37 @@ main section:last-child {
 	box-shadow: inset 0 -7px 9px -7px rgba(0,0,0,0.4);
 }
 
+// Colours
+
+.pc, a {
+	color: var(--colour);
+	transition: all 0.4s;
+}
+
+.bg-pc {
+	background-color: var(--colour);
+	transition: all 0.4s;
+}
+
+.bc-pc, .bc-pc-hover:hover {
+	border-color: var(--colour);
+	transition: all 0.4s;
+}
+
+.outline-pc:focus {
+	outline: auto var(--colour);
+}
+
+@media (hover: hover) {
+	.pc-hover:hover {
+		color: var(--colour);
+	}
+
+	.bg-pc-hover:hover {
+		background-color: var(--colour);
+	}
+}
+
 // Buttons
 .button {
 	margin: 1rem;
@@ -214,7 +245,7 @@ main section:last-child {
 }
 
 header #header-background-image {
-	background-image: url("../images/themes/london.jpg");
+	background-image: var(--background-image, url("/images/themes/london.jpg"));
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

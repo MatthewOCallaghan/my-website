@@ -1,5 +1,5 @@
 header {
-	min-height: 100vh;
+	min-height: 100svh;
 	text-align: right;
 
 	display: flex;
@@ -17,7 +17,7 @@ section {
 $sectionPaddingX: 7.5lvh;
 
 .section-title {
-	background-image: url("../images/themes/london.jpg");
+	background-image: var(--background-image, url("../images/themes/london.jpg"));
 	background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -67,6 +67,7 @@ header #header-background {
 	transition: background-image 1s;
 	display: flex;
 	flex-direction: column;
+	// First colour in rotation is red
 	background-color: rgba(255, 0, 0, 0.1);
 	transition: background-color 2s;
 	animation-name: shrink-header;
@@ -85,18 +86,6 @@ header #header-background {
 	}
 }
 
-header #header-background-image {
-	background-image: url("../images/themes/london.jpg");
-	background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    z-index: -5;
-    position: fixed;
-    transition: background-image 2s;
-}
-
 header .theme-duration-bar::after {
 	animation-name: stretchRight;
 	animation-duration: 30s;
@@ -106,7 +95,8 @@ header .theme-duration-bar::after {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	border-bottom: red 0.5rem solid;
+	// Red is first colour in rotation
+	border-bottom: var(--colour, red) 0.5rem solid;
 }
 
 @keyframes stretchRight {
@@ -328,25 +318,13 @@ section#contact .logo-font {
 
 }
 
-/* Colour changes according to theme */
-.pc, a, .pc-hover:hover {
-	color: #FF0000;
+/* Colour changes according to theme. This is the only index page specific style, others are handled by global.scss. */
+
+.theme-duration-bar::after {
+	border-color: var(--colour);
 	transition: all 0.4s;
 }
 
-.bg-pc, .bg-pc-hover:hover {
-	background-color: #FF0000;
-	transition: all 0.4s;
-}
-
-.bc-pc, .bc-pc-hover:hover, .theme-duration-bar::after {
-	border-color: #FF0000;
-	transition: all 0.4s;
-}
-
-.outline-pc:focus {
-	outline: auto #FF0000;
-}
 /* End of colour changes */
 
 /* Text size adjustments for bigger screens */

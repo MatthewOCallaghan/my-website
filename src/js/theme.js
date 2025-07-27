@@ -1,31 +1,31 @@
 var themes = [
 	{
-		image: 'images/themes/london.jpg',
+		image: '/images/themes/london.jpg',
 		colour: '#FF0000',
 		location: 'London, United Kingdom'
 	},
 	{
-		image: 'images/themes/new-york.jpg',
+		image: '/images/themes/new-york.jpg',
 		colour: '#FC8206',
 		location: 'New York City, USA'
 	},
 	{
-		image: 'images/themes/venice.png',
+		image: '/images/themes/venice.png',
 		colour: '#00BFFF',
 		location: 'Venice, Italy'
 	},
 	{
-		image: 'images/themes/malta.png',
+		image: '/images/themes/malta.png',
 		colour: '#4CBD08',
 		location: 'Sliema, Malta'
 	},
 	{
-		image: 'images/themes/paris.png',
+		image: '/images/themes/paris.png',
 		colour: '#AF9348',
 		location: 'Paris, France'
 	},
 	{
-		image: 'images/themes/naples.png',
+		image: '/images/themes/naples.png',
 		colour: '#E9CE14',
 		location: 'Naples, Italy'
 	}
@@ -39,10 +39,10 @@ function changeTheme(newThemeIndex) {
 	document.getElementById('image-location').innerHTML = newTheme.location;
 
 	if(document.getElementsByTagName('style').length) {
-		document.body.removeChild(document.getElementsByTagName('style')[0]);
+		document.getElementsByTagName('style')[0].remove();
 	}
 	var style = document.createElement('style');
-	style.innerHTML = `header #header-background-image, .bg-ti, .section-title {background-image: url("${newTheme.image}");} .pc, a, .pc-hover:hover {color: ${newTheme.colour};} .bg-pc, .bg-pc-hover:hover {background-color: ${newTheme.colour};} .bc-pc, .bc-pc-hover:hover, header .theme-duration-bar::after {border-color: ${newTheme.colour};} header #header-background {background-color: ${newTheme.colour}1A} .outline-pc:focus {outline: auto ${newTheme.colour}}`;
+	style.innerHTML = `:root { --colour: ${newTheme.colour}; --background-image: url("${newTheme.image}"); } header #header-background {background-color: ${newTheme.colour}1A}`;
 	document.body.appendChild(style);
 }
 

@@ -5,6 +5,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Permanent+Marker&family=Yellowtail&display=swap" rel="stylesheet">
 {% endblock %}
 
+{% block style %}
+    <style>
+        :root {
+            --colour: #000;
+        }
+    </style>
+{% endblock %}
+
 {% block header %}
     {% include "partials/navbar.njk" %}
 {% endblock %}
