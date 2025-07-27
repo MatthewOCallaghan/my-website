@@ -76,6 +76,7 @@
             "page": "cakesbykatie",
             "backgroundImage": "/images/work/cakesbykatie/cakesbykatie-background.jpg",
             "colour": "#f7cac9",
+            "github": "https://github.com/MatthewOCallaghan/cakes-by-katie",
             "moreDetail": [
                 "I design, develop and maintain the website of local cake maker Cakes by Katie, which serves as their primary customer acquisition channel and has contributed significantly to the early success of the business.",
                 "Visitors arriving on the homepage are welcomed by a full-screen video that immediately showcases Katie's creativity and skill. The site includes a portfolio, individual pages for each product and occasion, and supporting informational pages - designed to be both user-friendly and optimised for search engines.",
@@ -128,6 +129,7 @@
             "websiteURL": "https://www.atomicexams.co.uk",
             "page": "atomicexams",
             "colour": "#35dc39",
+            "github": "https://github.com/MatthewOCallaghan/exams-site",
             "backgroundImage": "/images/work/atomicexams/library-background.jpg",
             "moreDetail": [
                 "Imagine an academic examiner asks you three questions on neuroscience. Each requires only a short answer, but they're all very difficult and it would quickly become obvious you know nothing about neuroscience. Now imagine instead the examiner shows you a list of five possible questions, but this time says they'll return next week to ask you three of them at random. Over that week you'd likely find the answers to those five questions - perhaps with Google, AI, or even by asking an expert. By the time the examiner returns, you'd have memorised those five short answers. Your limited understanding of neuroscience doesn't matter - when questioned, you'd deliver fluent, rehearsed responses to whichever three questions get put to you and everyone would think you're an expert.",
@@ -138,7 +140,7 @@
                 "I would continue to learn over the next three years through GCSEs and A-Levels how deeply flawed academic assessment is. Now that I understood the system, I only ever achieved top marks again.",
                 "I have always wanted to create a product that uses these insights to help students raise their grades. My ambition is to create a web and mobile app that rivals textbooks by walking users through each course's official specification, helping them learn only the exact content they need. With many exams containing large amounts of theory that can be memorised with little academic skill, the app would emphasise short, flashcard-style content designed for effective recall.",
                 "As a first step towards this product, I've developed a tool to map past questions for a particular exam to the exact parts of its specification. I have selected AQA AS Computer Science Paper 2 for my prototype as it's a course I know well having sat it myself. The tool is built using Next.js and hosted on Vercel, with automatic deployments via GitHub CI/CD integration. Tailwind CSS handles the styling. I used ChatGPT to extract structured JSON from PDF documents including the specification, past papers, and mark schemes.",
-                "I have developed a landing page for this product using Astro."
+                "I have developed a landing page for this product using Astro, the repo for which is publicly available on my GitHub."
             ],
             "devicons": ["next", "react", "typescript", "html", "css", "tailwind", "vercel", "astro"],
             "evidence": {
