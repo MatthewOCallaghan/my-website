@@ -26,16 +26,19 @@ const sass = gulpSass(sassCompiler);
 
 let data = require('./src/data.json');
 
-function setupBrowserSync(cb) {
-    browserSync.init({
-        server: {
-            baseDir: 'src',
-            serveStaticOptions: {
-                extensions: ['html']
+function setupBrowserSync(baseDir = 'src') {
+    function serve(cb) {
+        browserSync.init({
+            server: {
+                baseDir: baseDir,
+                serveStaticOptions: {
+                    extensions: ['html']
+                }
             }
-        }
-    });
-    cb();
+        });
+        cb();
+    }
+    return serve;
 }
 
 function processSass() {
@@ -158,8 +161,10 @@ function clearCache(cb) {
 
 exports.clearCache = clearCache;
 
-exports.default = series(parallel(processSass, processNunjucks), setupBrowserSync, watchFiles);
+exports.default = series(parallel(processSass, processNunjucks), setupBrowserSync('src'), watchFiles);
 
 exports.build = series(cleanDist, parallel(processSass, processNunjucks), buildFiles);
 
 exports.deploy = deploy;
+
+exports.serveDist = series(exports.build, setupBrowserSync('dist'));
