@@ -142,7 +142,9 @@ function deploy() {
             callback(null, !remoteFile || localFile.extname === '.html' || localFile.stat.mtime > remoteFile.ftp.date);
         }))
         .pipe(connection.dest(remoteFolder)) // Deploy
-        .pipe(connection.clean(['/**/*.js', '/**/*.css', '/images/**/*', '/videos/**/*'].map(p => remoteFolder + p), './dist', { base: remoteFolder })); // Remove remote files with no local version
+        // Remove remote files with no local version
+        // Leave Experimental Gravity website build alone
+        .pipe(connection.clean(['/**/*.js', '/**/*.css', '/images/**/*', '/videos/**/*', '!/experimentalgravity/site/**/*'].map(p => remoteFolder + p), './dist', { base: remoteFolder }));
 
 }
 

@@ -44,7 +44,7 @@
                 "src": "/images/work/experimental-gravity/experimental-gravity.png",
                 "alt": "Experimental Gravity on iPhone and iPad"
             },
-            "websiteURL": "https://www.experimentalgravity.com",
+            "websiteURL": "https://www.matthewocallaghan.uk/experimentalgravity/site",
             "page": "experimentalgravity",
             "colour": "rgb(202,116,184)",
             "backgroundImage": "/images/work/experimental-gravity/background.png",
@@ -54,7 +54,7 @@
             ],
             "devicons": ["unity", "c#", "inkscape", "ios", "html", "css", "js", "gulp", "sass"],
             "evidence": {
-                "appPreview": "videos/iPhone11.mp4",
+                "appPreview": "/videos/iPhone11.mp4",
                 "websiteScreenshots": [
                     {
                         "src": "/images/work/experimental-gravity/experimental-gravity-screenshot.png",
