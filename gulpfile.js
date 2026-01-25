@@ -1,6 +1,7 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const fs = require('fs');
-const sass = require('gulp-sass');
+const gulpSass = require('gulp-sass');
+const sassCompiler = require('sass');
 const browserSync = require('browser-sync').create();
 const useref = require('gulp-useref'); // Concatenates js and css files
 const htmlmin = require('gulp-htmlmin');
@@ -20,6 +21,8 @@ const htmlPrettify = require('gulp-html-prettify');
 const processData = require('gulp-data');
 const ftp = require('vinyl-ftp');
 const logger = require('fancy-log');
+
+const sass = gulpSass(sassCompiler);
 
 let data = require('./src/data.json');
 

@@ -36,9 +36,10 @@
     "gulp-postcss": "^8.0.0",
     "gulp-purgecss": "^4.0.2",
     "gulp-rev-all": "^2.0.3",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^4.0.1",
+    "sass": "^1.45.1",
     "vinyl-ftp": "^0.6.1"
   },
   "dependencies": {
