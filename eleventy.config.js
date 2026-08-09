@@ -12,7 +12,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ favicon: "." });
     eleventyConfig.addPassthroughCopy("CNAME");
 
-    // cv.pdf doesn't exist in the repo yet; only wire up the copy once it's been added.
     if (fs.existsSync("cv.pdf")) {
         eleventyConfig.addPassthroughCopy("cv.pdf");
     }
