@@ -250,8 +250,10 @@ header #header-background-image {
 	// --background-image/--background-image-webp are set dynamically (theme.js, work-template.njk);
 	// var() can't fall back to a plain url() if image-set() itself is unsupported, so gate the
 	// enhanced declaration behind a feature query rather than relying on cascade fallback.
-	@supports (background-image: image-set(url("a.png") 1x)) {
-		background-image: image-set(var(--background-image, url("/images/themes/london.jpg")) 1x, var(--background-image-webp, url("/images/themes/london.webp")) 1x);
+	// The webp candidate must come first: browsers pick the first decodable option in image-set(),
+	// they don't prefer smaller/more-efficient formats automatically.
+	@supports (background-image: image-set(url("a.png") type("image/webp"))) {
+		background-image: image-set(var(--background-image-webp, url("/images/themes/london.webp")) type("image/webp"), var(--background-image, url("/images/themes/london.jpg")) 1x);
 	}
 
 	background-repeat: no-repeat;

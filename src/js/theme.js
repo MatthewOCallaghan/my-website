@@ -38,6 +38,10 @@ function webpImage(image) {
 	return image.replace(/\.(jpe?g|png)$/i, '.webp');
 }
 
+// Matches the @supports feature query in global.scss/index.scss, so we preload whichever
+// format the background-image CSS will actually end up requesting.
+var supportsWebpBackground = window.CSS && CSS.supports('background-image', 'image-set(url("a.png") type("image/webp"))');
+
 function changeTheme(newThemeIndex) {
 	var newTheme = themes[newThemeIndex];
 
@@ -75,7 +79,7 @@ function manageTheme() {
 	nextImage.onload = function() {
 		imageLoaded = true;
 	}
-	nextImage.src = themes[nextTheme].image;
+	nextImage.src = supportsWebpBackground ? webpImage(themes[nextTheme].image) : themes[nextTheme].image;
 	setTimeout(function() {
 		if(imageLoaded) {
 			changeTheme(nextTheme);
