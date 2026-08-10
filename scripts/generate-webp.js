@@ -2,8 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 
-// Generates a .webp sibling for every raster image Eleventy has already copied
-// into dist/images, so templates/CSS can offer webp with a jpg/png fallback.
+// Replaces every raster image Eleventy has already copied into dist/images with a .webp
+// version, so templates/CSS reference .webp directly with no jpg/png fallback shipped.
 const IMAGES_DIR = path.join(__dirname, "..", "dist", "images");
 const CONVERTIBLE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png"]);
 
@@ -25,6 +25,7 @@ async function convertDir(dir) {
 
         const webpPath = fullPath.slice(0, -ext.length) + ".webp";
         await sharp(fullPath).webp({ quality: 82 }).toFile(webpPath);
+        fs.unlinkSync(fullPath);
     }
 }
 

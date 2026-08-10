@@ -245,10 +245,7 @@ main section:last-child {
 }
 
 header #header-background-image {
-	// --background-image is set dynamically (theme.js, work-template.njk) and always holds a
-	// plain url() — never image-set() — because Chromium won't animate background-image at all
-	// once the value is image-set(), which silently breaks the transition below.
-	background-image: var(--background-image, url("/images/themes/london.jpg"));
+	background-image: var(--background-image, url("/images/themes/london.webp"));
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -17,8 +17,7 @@ section {
 $sectionPaddingX: 7.5lvh;
 
 .section-title {
-	// See global.scss's header #header-background-image for why this stays a plain var()/url().
-	background-image: var(--background-image, url("../images/themes/london.jpg"));
+	background-image: var(--background-image, url("../images/themes/london.webp"));
 	background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -163,8 +162,7 @@ header #image-location {
 
 section#about {
 	background-color: #FAFAFA;
-	background-image: url("../images/backgrounds/brick-wall.png");
-	background-image: image-set(url("../images/backgrounds/brick-wall.webp") type("image/webp"), url("../images/backgrounds/brick-wall.png") type("image/png"));
+	background-image: url("../images/backgrounds/brick-wall.webp");
 }
 
 section#work {
@@ -296,8 +294,7 @@ section#work {
 
 section#contact {
 	background-color: #252525;
-	background-image: url("../images/backgrounds/notebook.png");
-	background-image: image-set(url("../images/backgrounds/notebook.webp") type("image/webp"), url("../images/backgrounds/notebook.png") type("image/png"));
+	background-image: url("../images/backgrounds/notebook.webp");
 }
 
 section#contact p {

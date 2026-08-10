@@ -10,7 +10,7 @@
         :root {
             --colour: {{ workInfo.colour }};
             {% if workInfo.backgroundImage %}
-            --background-image: url({{ workInfo.backgroundImage }});
+            --background-image: url({{ workInfo.backgroundImage | webp }});
             {% endif %}
         }
 
@@ -19,19 +19,6 @@
             border-color: var(--colour);
         }
     </style>
-    {% if workInfo.backgroundImage %}
-    {# Blocking (not deferred) so it runs before first paint, avoiding a flash of the non-webp image. #}
-    {# See global.scss's header #header-background-image comment: this can't be done via CSS image-set(). #}
-    <script>
-        (function () {
-            var canvas = document.createElement("canvas");
-            var supportsWebp = canvas.getContext && canvas.getContext("2d") && canvas.toDataURL("image/webp").indexOf("data:image/webp") === 0;
-            if (supportsWebp) {
-                document.documentElement.style.setProperty("--background-image", 'url({{ workInfo.backgroundImage | webp }})');
-            }
-        })();
-    </script>
-    {% endif %}
 {% endblock %}
 
 {% block header %}
@@ -55,7 +42,7 @@
             </p>
         </div>
         <div>
-            <figure><picture><source srcset="{{ workInfo.image.src | webp }}" type="image/webp"><img src="{{ workInfo.image.src }}" width="auto" height="auto" alt="{{ workInfo.image.alt }}"></picture></figure>
+            <figure><img src="{{ workInfo.image.src | webp }}" width="auto" height="auto" alt="{{ workInfo.image.alt }}"></figure>
         </div>
         {# <div class="w-100"><a class="button button-ghost bg-pc-hover" href="{{ workInfo.websiteURL }}" target="_blank">View website</a></div> #}
         <div class="work-item-links w-100">
@@ -81,7 +68,7 @@
             
             {% for screenshot in workInfo.evidence.websiteScreenshots %}
                 <figure>
-                    <picture><source srcset="{{ screenshot.src | webp }}" type="image/webp"><img src="{{ screenshot.src }}" width="100%" height="auto" alt="{{ screenshot.alt }}"></picture>
+                    <img src="{{ screenshot.src | webp }}" width="100%" height="auto" alt="{{ screenshot.alt }}">
                     {% if screenshot.caption %}<figcaption>{{ screenshot.caption }}</figcaption>{% endif %}
                 </figure>
             {% endfor %}
