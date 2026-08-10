@@ -38,9 +38,21 @@ function webpImage(image) {
 	return image.replace(/\.(jpe?g|png)$/i, '.webp');
 }
 
-// Matches the @supports feature query in global.scss/index.scss, so we preload whichever
-// format the background-image CSS will actually end up requesting.
-var supportsWebpBackground = window.CSS && CSS.supports('background-image', 'image-set(url("a.png") type("image/webp"))');
+// Resolving the format here (rather than via CSS image-set()) matters: --background-image
+// only ever holds a plain url(), which keeps `transition: background-image` working. Chromium
+// doesn't animate background-image at all once the value is an image-set() (tested directly:
+// no transitionstart/transitionend fires), so image-set() can't be used on this property.
+function supportsWebp() {
+	var canvas = document.createElement('canvas');
+	if (!(canvas.getContext && canvas.getContext('2d'))) return false;
+	return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+}
+
+var webpSupported = supportsWebp();
+
+function themeImage(theme) {
+	return webpSupported ? webpImage(theme.image) : theme.image;
+}
 
 function changeTheme(newThemeIndex) {
 	var newTheme = themes[newThemeIndex];
@@ -51,7 +63,7 @@ function changeTheme(newThemeIndex) {
 		document.getElementsByTagName('style')[0].remove();
 	}
 	var style = document.createElement('style');
-	style.innerHTML = `:root { --colour: ${newTheme.colour}; --background-image: url("${newTheme.image}"); --background-image-webp: url("${webpImage(newTheme.image)}"); } header #header-background {background-color: ${newTheme.colour}1A}`;
+	style.innerHTML = `:root { --colour: ${newTheme.colour}; --background-image: url("${themeImage(newTheme)}"); } header #header-background {background-color: ${newTheme.colour}1A}`;
 	document.body.appendChild(style);
 }
 
@@ -79,7 +91,7 @@ function manageTheme() {
 	nextImage.onload = function() {
 		imageLoaded = true;
 	}
-	nextImage.src = supportsWebpBackground ? webpImage(themes[nextTheme].image) : themes[nextTheme].image;
+	nextImage.src = themeImage(themes[nextTheme]);
 	setTimeout(function() {
 		if(imageLoaded) {
 			changeTheme(nextTheme);

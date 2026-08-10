@@ -17,13 +17,8 @@ section {
 $sectionPaddingX: 7.5lvh;
 
 .section-title {
+	// See global.scss's header #header-background-image for why this stays a plain var()/url().
 	background-image: var(--background-image, url("../images/themes/london.jpg"));
-
-	// See global.scss's header #header-background-image for why this needs @supports and this ordering.
-	@supports (background-image: image-set(url("a.png") type("image/webp"))) {
-		background-image: image-set(var(--background-image-webp, url("../images/themes/london.webp")) type("image/webp"), var(--background-image, url("../images/themes/london.jpg")) 1x);
-	}
-
 	background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

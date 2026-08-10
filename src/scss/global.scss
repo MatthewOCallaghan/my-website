@@ -245,17 +245,10 @@ main section:last-child {
 }
 
 header #header-background-image {
+	// --background-image is set dynamically (theme.js, work-template.njk) and always holds a
+	// plain url() — never image-set() — because Chromium won't animate background-image at all
+	// once the value is image-set(), which silently breaks the transition below.
 	background-image: var(--background-image, url("/images/themes/london.jpg"));
-
-	// --background-image/--background-image-webp are set dynamically (theme.js, work-template.njk);
-	// var() can't fall back to a plain url() if image-set() itself is unsupported, so gate the
-	// enhanced declaration behind a feature query rather than relying on cascade fallback.
-	// The webp candidate must come first: browsers pick the first decodable option in image-set(),
-	// they don't prefer smaller/more-efficient formats automatically.
-	@supports (background-image: image-set(url("a.png") type("image/webp"))) {
-		background-image: image-set(var(--background-image-webp, url("/images/themes/london.webp")) type("image/webp"), var(--background-image, url("/images/themes/london.jpg")) 1x);
-	}
-
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

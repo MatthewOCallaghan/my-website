@@ -11,7 +11,6 @@
             --colour: {{ workInfo.colour }};
             {% if workInfo.backgroundImage %}
             --background-image: url({{ workInfo.backgroundImage }});
-            --background-image-webp: url({{ workInfo.backgroundImage | webp }});
             {% endif %}
         }
 
@@ -20,6 +19,19 @@
             border-color: var(--colour);
         }
     </style>
+    {% if workInfo.backgroundImage %}
+    {# Blocking (not deferred) so it runs before first paint, avoiding a flash of the non-webp image. #}
+    {# See global.scss's header #header-background-image comment: this can't be done via CSS image-set(). #}
+    <script>
+        (function () {
+            var canvas = document.createElement("canvas");
+            var supportsWebp = canvas.getContext && canvas.getContext("2d") && canvas.toDataURL("image/webp").indexOf("data:image/webp") === 0;
+            if (supportsWebp) {
+                document.documentElement.style.setProperty("--background-image", 'url({{ workInfo.backgroundImage | webp }})');
+            }
+        })();
+    </script>
+    {% endif %}
 {% endblock %}
 
 {% block header %}
