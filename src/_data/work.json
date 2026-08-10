@@ -22,7 +22,7 @@
             "html",
             "css",
             "js",
-            "gulp",
+            "eleventy",
             "sass"
         ],
         "evidence": {

@@ -122,5 +122,9 @@
     "unity": {
         "class": "unity-plain",
         "title": "Unity"
+    },
+    "eleventy": {
+        "class": "eleventy-plain",
+        "title": "Eleventy"
     }
 }
