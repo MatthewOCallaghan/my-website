@@ -9,7 +9,10 @@
     <style>
         :root {
             --colour: {{ workInfo.colour }};
+            {% if workInfo.backgroundImage %}
             --background-image: url({{ workInfo.backgroundImage }});
+            --background-image-webp: url({{ workInfo.backgroundImage | webp }});
+            {% endif %}
         }
 
         h1, h2, a, header, footer h3 {
@@ -40,7 +43,7 @@
             </p>
         </div>
         <div>
-            <figure><img src="{{ workInfo.image.src }}" width="auto" height="auto" alt="{{ workInfo.image.alt }}"></figure>
+            <figure><picture><source srcset="{{ workInfo.image.src | webp }}" type="image/webp"><img src="{{ workInfo.image.src }}" width="auto" height="auto" alt="{{ workInfo.image.alt }}"></picture></figure>
         </div>
         {# <div class="w-100"><a class="button button-ghost bg-pc-hover" href="{{ workInfo.websiteURL }}" target="_blank">View website</a></div> #}
         <div class="work-item-links w-100">
@@ -66,7 +69,7 @@
             
             {% for screenshot in workInfo.evidence.websiteScreenshots %}
                 <figure>
-                    <img src="{{ screenshot.src }}" width="100%" height="auto" alt="{{ screenshot.alt }}">
+                    <picture><source srcset="{{ screenshot.src | webp }}" type="image/webp"><img src="{{ screenshot.src }}" width="100%" height="auto" alt="{{ screenshot.alt }}"></picture>
                     {% if screenshot.caption %}<figcaption>{{ screenshot.caption }}</figcaption>{% endif %}
                 </figure>
             {% endfor %}

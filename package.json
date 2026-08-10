@@ -13,8 +13,9 @@
     "build:css": "postcss dist/css/*.css --use autoprefixer cssnano --replace",
     "build:purge": "purgecss --css dist/css/*.css --content 'dist/**/*.html' 'src/js/**/*.js' -o dist/css",
     "build:js": "esbuild src/js/*.js --minify --outdir=dist/js",
-    "build": "npm run clean && npm run build:eleventy && npm run build:scss && npm run build:css && npm run build:purge && npm run build:js",
-    "dev": "concurrently \"sass --load-path=node_modules src/scss:dist/css --watch --no-source-map\" \"eleventy --config=eleventy.config.js --serve\"",
+    "build:webp": "node scripts/generate-webp.js",
+    "build": "npm run clean && npm run build:eleventy && npm run build:webp && npm run build:scss && npm run build:css && npm run build:purge && npm run build:js",
+    "dev": "npm run build:eleventy && npm run build:webp && concurrently \"sass --load-path=node_modules src/scss:dist/css --watch --no-source-map\" \"eleventy --config=eleventy.config.js --serve\"",
     "serve": "eleventy --config=eleventy.config.js --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -38,7 +39,8 @@
     "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
     "purgecss": "^6.0.0",
-    "sass": "^1.83.0"
+    "sass": "^1.83.0",
+    "sharp": "^0.35.3"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"

@@ -33,6 +33,11 @@ var themes = [
 
 var nextTheme = 0;
 
+// scripts/generate-webp.js generates a .webp sibling for every jpg/png at build time.
+function webpImage(image) {
+	return image.replace(/\.(jpe?g|png)$/i, '.webp');
+}
+
 function changeTheme(newThemeIndex) {
 	var newTheme = themes[newThemeIndex];
 
@@ -42,7 +47,7 @@ function changeTheme(newThemeIndex) {
 		document.getElementsByTagName('style')[0].remove();
 	}
 	var style = document.createElement('style');
-	style.innerHTML = `:root { --colour: ${newTheme.colour}; --background-image: url("${newTheme.image}"); } header #header-background {background-color: ${newTheme.colour}1A}`;
+	style.innerHTML = `:root { --colour: ${newTheme.colour}; --background-image: url("${newTheme.image}"); --background-image-webp: url("${webpImage(newTheme.image)}"); } header #header-background {background-color: ${newTheme.colour}1A}`;
 	document.body.appendChild(style);
 }
 

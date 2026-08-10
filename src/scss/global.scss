@@ -246,6 +246,14 @@ main section:last-child {
 
 header #header-background-image {
 	background-image: var(--background-image, url("/images/themes/london.jpg"));
+
+	// --background-image/--background-image-webp are set dynamically (theme.js, work-template.njk);
+	// var() can't fall back to a plain url() if image-set() itself is unsupported, so gate the
+	// enhanced declaration behind a feature query rather than relying on cascade fallback.
+	@supports (background-image: image-set(url("a.png") 1x)) {
+		background-image: image-set(var(--background-image, url("/images/themes/london.jpg")) 1x, var(--background-image-webp, url("/images/themes/london.webp")) 1x);
+	}
+
 	background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

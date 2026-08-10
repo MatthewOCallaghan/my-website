@@ -75,6 +75,7 @@ section#intro div.work-item-links {
 
 section#details {
 	background-image: url("/images/backgrounds/brick-wall.png");
+	background-image: image-set(url("/images/backgrounds/brick-wall.png") 1x, url("/images/backgrounds/brick-wall.webp") 1x);
 }
 
 section#screenshots {
