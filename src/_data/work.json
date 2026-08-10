@@ -6,7 +6,7 @@
             "src": "/images/work/experimental-gravity/experimental-gravity.png",
             "alt": "Experimental Gravity on iPhone and iPad"
         },
-        "websiteURL": "https://www.matthewocallaghan.uk/experimentalgravity/site",
+        "websiteURL": "https://matthewocallaghan.github.io/eg-website/",
         "page": "experimentalgravity",
         "colour": "rgb(202,116,184)",
         "backgroundImage": "/images/work/experimental-gravity/background.png",
@@ -157,7 +157,6 @@
             "src": "/images/work/rl-analytics/rl-analytics.png",
             "alt": "Rocket League Analytics on various devices"
         },
-        "websiteURL": "http://rocketleagueanalytics.herokuapp.com",
         "page": "rl-analytics",
         "colour": "orange",
         "github": "https://github.com/MatthewOCallaghan/rl-analytics",

@@ -44,7 +44,7 @@
         </div>
         {# <div class="w-100"><a class="button button-ghost bg-pc-hover" href="{{ workInfo.websiteURL }}" target="_blank">View website</a></div> #}
         <div class="work-item-links w-100">
-            <a class="button button-filled button-text-white bg-pc bc-pc pc-hover" href="{{ workInfo.websiteURL }}" target="_blank">View&nbsp;website</a>
+            {% if workInfo.websiteURL %}<a class="button button-filled button-text-white bg-pc bc-pc pc-hover" href="{{ workInfo.websiteURL }}" target="_blank">View&nbsp;website</a>{% endif %}
             {% if workInfo.github %}<a class="button button-ghost bg-pc-hover" href="{{ workInfo.github }}" target="_blank">GitHub</a>{% endif %}
         </div>
     </section>
