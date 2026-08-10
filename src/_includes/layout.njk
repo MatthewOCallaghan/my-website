@@ -6,10 +6,8 @@
         {% block fonts %}{% endblock %}
         {% if page != "404" %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">{% endif %}
         
-        <!-- build:css(src/) css/{{ pages[page].cssFile }}.min.css -->
         <link rel="stylesheet" type="text/css" href="/css/global.css">
         <link rel="stylesheet" type="text/css" href="{{ "/css/" ~ pages[page].cssFile ~ ".css"}}">
-        <!-- endbuild -->
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% if pages[page].description %}<meta name="description" content="{{ pages[page].description }}">{% endif %}
@@ -69,9 +67,7 @@
         </footer>
         {% block remoteScripts %}{% endblock %}
 
-        <!-- build:js(src/) js/{{ pages[page].jsFilename }}.min.js -->
         <script type="text/javascript" src="/js/nav-menu.js" defer></script>
         {% block scripts %}{% endblock %}
-        <!-- endbuild -->
     </body>
 </html>

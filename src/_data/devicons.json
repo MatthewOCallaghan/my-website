@@ -1,0 +1,130 @@
+{
+    "html": {
+        "class": "html5-plain",
+        "title": "HTML"
+    },
+    "css": {
+        "class": "css3-plain",
+        "title": "CSS"
+    },
+    "js": {
+        "class": "javascript-plain",
+        "title": "JavaScript"
+    },
+    "c#": {
+        "class": "csharp-plain",
+        "title": "C#"
+    },
+    "java": {
+        "class": "java-plain",
+        "title": "Java"
+    },
+    "node": {
+        "class": "nodejs-plain",
+        "title": "Node.js"
+    },
+    "react": {
+        "class": "react-original",
+        "title": "React"
+    },
+    "express": {
+        "class": "express-original",
+        "title": "Express"
+    },
+    "gulp": {
+        "class": "gulp-plain",
+        "title": "gulp"
+    },
+    "sass": {
+        "class": "sass-original",
+        "title": "Sass"
+    },
+    "jquery": {
+        "class": "jquery-plain",
+        "title": "jQuery"
+    },
+    "bootstrap": {
+        "class": "bootstrap-plain",
+        "title": "Bootstrap"
+    },
+    "postgres": {
+        "class": "postgresql-plain",
+        "title": "PostgreSQL"
+    },
+    "redux": {
+        "class": "redux-original",
+        "title": "Redux"
+    },
+    "heroku": {
+        "class": "heroku-original",
+        "title": "Heroku"
+    },
+    "haskell": {
+        "class": "haskell-plain",
+        "title": "Haskell"
+    },
+    "inkscape": {
+        "class": "inkscape-plain",
+        "title": "Inkscape"
+    },
+    "googleCloud": {
+        "class": "googlecloud-plain",
+        "title": "Google Cloud"
+    },
+    "firebase": {
+        "class": "firebase-plain",
+        "title": "Firebase"
+    },
+    "ios": {
+        "class": "apple-original",
+        "title": "iOS"
+    },
+    "aws": {
+        "class": "amazonwebservices-plain-wordmark",
+        "title": "AWS"
+    },
+    "angularJs": {
+        "class": "angularjs-plain",
+        "title": "AngularJS"
+    },
+    "jest": {
+        "class": "jest-plain",
+        "title": "Jest"
+    },
+    "google": {
+        "class": "google-plain",
+        "title": "Google"
+    },
+    "typescript": {
+        "class": "typescript-plain",
+        "title": "TypeScript"
+    },
+    "next": {
+        "class": "nextjs-plain",
+        "title": "Next.js"
+    },
+    "figma": {
+        "class": "figma-plain",
+        "title": "Figma"
+    },
+    "tailwind": {
+        "class": "tailwindcss-plain",
+        "title": "Tailwind CSS"
+    },
+    "vercel": {
+        "class": "vercel-original",
+        "title": "Vercel"
+    },
+    "astro": {
+        "class": "astro-plain",
+        "title": "Astro"
+    },
+    "unity": {
+        "class": "unity-plain",
+        "title": "Unity"
+    },
+    "eleventy": {
+        "class": "eleventy-plain",
+        "title": "Eleventy"
+    }
+}

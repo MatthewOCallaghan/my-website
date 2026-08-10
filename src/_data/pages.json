@@ -1,0 +1,31 @@
+{
+    "404": {
+        "title": "Page not found | Matthew O'Callaghan",
+        "cssFile": "404"
+    },
+    "index": {
+        "title": "Matthew O'Callaghan",
+        "cssFile": "index",
+        "description": "First class Computer Science graduate with strong frontend and backend development experience and a passion for UX design."
+    },
+    "experimentalgravity": {
+        "title": "Experimental Gravity | Matthew O'Callaghan",
+        "cssFile": "work",
+        "description": "Experimental Gravity is the unique physics-based puzzle that puts you in control of gravity. Available now on iOS!"
+    },
+    "cakesbykatie": {
+        "title": "Cakes by Katie | Matthew O'Callaghan",
+        "cssFile": "work",
+        "description": "Cakes by Katie is a local cake maker whose website I design, develop and maintain. This website is Katie's primary source of customer acquistion."
+    },
+    "atomicexams": {
+        "title": "Atomic Exams | Matthew O'Callaghan",
+        "cssFile": "work",
+        "description": "I am currently working on a prototype for an exams preparation app. It will use a highly targeted and efficient alternative approach I found success with during my own studies."
+    },
+    "rl-analytics": {
+        "title": "Rocket League Analytics | Matthew O'Callaghan",
+        "cssFile": "work",
+        "description": "Rocket League Analytics was my third year university project and provides in-game analytics, match history, and statistics tracking for Rocket League players."
+    }
+}
