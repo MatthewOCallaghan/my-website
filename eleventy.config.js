@@ -4,6 +4,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addNunjucksFilter("getWorkInfo", (work, page) => work.filter((workItem) => workItem.page === page)[0]);
     eleventyConfig.addNunjucksFilter("countProperties", (obj) => Object.keys(obj).length);
 
+    // build:webp (scripts/generate-webp.js) generates a .webp sibling for every jpg/png in dist/images.
+    eleventyConfig.addNunjucksFilter("webp", (src) => src && src.replace(/\.(jpe?g|png)$/i, ".webp"));
+
     eleventyConfig.addPassthroughCopy({ "src/images": "images" });
     eleventyConfig.addPassthroughCopy({ "src/videos": "videos" });
     // Raw JS, so `npm run dev`/`eleventy --serve` alone has working scripts.

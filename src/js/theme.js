@@ -1,31 +1,31 @@
 var themes = [
 	{
-		image: '/images/themes/london.jpg',
+		image: '/images/themes/london.webp',
 		colour: '#FF0000',
 		location: 'London, United Kingdom'
 	},
 	{
-		image: '/images/themes/new-york.jpg',
+		image: '/images/themes/new-york.webp',
 		colour: '#FC8206',
 		location: 'New York City, USA'
 	},
 	{
-		image: '/images/themes/venice.png',
+		image: '/images/themes/venice.webp',
 		colour: '#00BFFF',
 		location: 'Venice, Italy'
 	},
 	{
-		image: '/images/themes/malta.png',
+		image: '/images/themes/malta.webp',
 		colour: '#4CBD08',
 		location: 'Sliema, Malta'
 	},
 	{
-		image: '/images/themes/paris.png',
+		image: '/images/themes/paris.webp',
 		colour: '#AF9348',
 		location: 'Paris, France'
 	},
 	{
-		image: '/images/themes/naples.png',
+		image: '/images/themes/naples.webp',
 		colour: '#E9CE14',
 		location: 'Naples, Italy'
 	}
